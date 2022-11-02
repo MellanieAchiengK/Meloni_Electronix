@@ -7,6 +7,7 @@ We will use unittest for python tests and Jest for javascript tests.
 
 
 do
+```
 git clone https://github.com/HamaBarhamou/Melonie-Electronix
 git fetch origin // recuperer toutes les branch du projet
 git branch - a // lister toutes les branch
@@ -20,3 +21,4 @@ git push
 git chechout development
 git merge your_name
 git push
+```
