@@ -9,8 +9,8 @@ We will use unittest for python tests and Jest for javascript tests.
 do
 ```
 git clone https://github.com/HamaBarhamou/Melonie-Electronix
-git fetch origin // recuperer toutes les branch du projet
-git branch - a // lister toutes les branch
+git fetch origin // retrieve all project branches
+git branch - a // list all branches
 git checkout -b development origin/development  // Create a copy of the development branch in local
 git checkout development
 git checkout -b your_name  // Create your development branch from the development branch
