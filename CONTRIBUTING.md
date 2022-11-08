@@ -16,7 +16,7 @@ git checkout development
 git checkout -b your_name  // Create your development branch from the development branch
 // make your contribution and then
 git add .   
-git commit -m 'message commit'  
+git commit -m 'message commit #your_issues_id'  
 git push    
 git chechout development
 git merge your_name
