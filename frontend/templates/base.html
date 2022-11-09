@@ -10,10 +10,13 @@
         {% endblock %}
     </HEAD>
     <BODY>
-        <div id="content">{% block content %}{% endblock %}</div>
+        {% block content %}
+        
+        {% endblock %}
+        
         <div id="footer">
             {% block footer %}
-            &copy; Copyright 2022 by <a href="https://hamabarhamou.github.io/monCV/">you</a>.
+            &copy; Copyright 2022 by <a href="https://github.com/HamaBarhamou">HamaBarhamou</a>.
             {% endblock %}
         </div>
 

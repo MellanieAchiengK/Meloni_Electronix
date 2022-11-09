@@ -16,7 +16,7 @@ app.register_blueprint(app_views)
 
 @app.route("/")
 def hello_world():
-    return render_template('hello.html')
+    return render_template('acceuil.html')
 
 
 @app.route("/presentation")
