@@ -8,5 +8,5 @@ The objective of this project (Meloni Electronix) is to develop an e-commerce ap
 python3 backend/v1/app.py
 curl http://127.0.0.1:5000/
 http://127.0.0.1:5000/presentation
-http://127.0.0.1:5000/backend/v1/produit
+http://127.0.0.1:5000/api/v1/produit
 ```
