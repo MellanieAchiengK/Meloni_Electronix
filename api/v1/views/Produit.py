@@ -3,7 +3,7 @@
 Liste of the produit
 """
 
-from flask import render_template
+from flask import jsonify
 from views import app_views
 
 
@@ -12,4 +12,5 @@ from views import app_views
     methods=['GET'],
     strict_slashes=False)
 def get_Produit():
-    return render_template('hello.html')
+    produit = ['accessoire','ordinateur','chargeur','ecouteur','baterie']
+    return jsonify({'produit':produit})
