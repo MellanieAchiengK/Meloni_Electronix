@@ -4,12 +4,15 @@ Melonie_Electronix implementation
 """
 
 from flask import Flask, render_template
+from views import app_views
 from os import getenv
 
 
 app = Flask(__name__,
-            static_folder='../frontend/static',
-            template_folder='../frontend/templates')
+            static_folder='../../frontend/static',
+            template_folder='../../frontend/templates')
+app.register_blueprint(app_views)
+
 
 @app.route("/")
 def hello_world():
