@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<HTML lang="en">
+    <HEAD>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	    
+        {% block head %}
+            <script src="{{ url_for('static', filename='scripts/hello.js') }}"></script>
+            <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+            <title>{% block title %}{% endblock %} - My Webpage</title>
+        {% endblock %}
+    </HEAD>
+    <BODY>
+        <div id="content">{% block content %}{% endblock %}</div>
+        <div id="footer">
+            {% block footer %}
+            &copy; Copyright 2022 by <a href="https://hamabarhamou.github.io/monCV/">you</a>.
+            {% endblock %}
+        </div>
+
+    </BODY>
+</HTML>
