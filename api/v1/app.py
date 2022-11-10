@@ -28,6 +28,7 @@ def presentation():
 def landing_page():
     return render_template('landing_page.html')
 
+
 if __name__ == '__main__':
     api_host = getenv('MELONIE_ELECTRONIX_HOST', default='0.0.0.0')
     api_port = getenv('MELONIE_ELECTRONIX_PORT', default=5000)
