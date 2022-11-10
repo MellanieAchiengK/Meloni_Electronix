@@ -11,12 +11,12 @@
         {% endblock %}
     </HEAD>
     <BODY>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-sm">
+                <div class="col-sm border border-secondary">
                   Logo
                 </div>
-                <div class="col-sm col-6">
+                <div class="col-sm col-6 border border-success">
                     <nav id="navigation" class="navbar navbar-expand">
                         {% block navbar %}
                             <a class="navbar-brand" href="...">Product</a>
@@ -25,18 +25,18 @@
                         {% endblock %}
                     </nav>
                 </div>
-                <div class="col-sm">
+                <div class="col-sm border border-warning">
                   Login/Logout
                 </div>
             </div>
             
         </div>
 
-        <div class="container">
+        <div class="container border border-success">
             {% block content %} {% endblock %} 
         </div>
 
-        <div id="footer">
+        <div id="footer" class="container-fluid border border-dark">
             {% block footer %}
             &copy; Copyright 2022 by <a href="https://github.com/HamaBarhamou">HamaBarhamou</a>.
             {% endblock %}
