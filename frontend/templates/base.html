@@ -11,12 +11,12 @@
         {% endblock %}
     </HEAD>
     <BODY>
-        <div class="container-fluid">
+        <div class="container-fluid m-2">
             <div class="row">
                 <div class="col-sm border border-secondary">
                   Logo
                 </div>
-                <div class="col-sm col-6 border border-success">
+                <div class="col-sm col-8 border border-success">
                     <nav id="navigation" class="navbar navbar-expand">
                         {% block navbar %}
                             <a class="navbar-brand" href="...">Product</a>
@@ -36,7 +36,7 @@
             {% block content %} {% endblock %} 
         </div>
 
-        <div id="footer" class="container-fluid border border-dark">
+        <div id="footer" class="container-fluid border border-dark m-2">
             {% block footer %}
             &copy; Copyright 2022 by <a href="https://github.com/HamaBarhamou">HamaBarhamou</a>.
             {% endblock %}
