@@ -8,7 +8,7 @@ $(document).ready(function () {
     $.get( HOST + "/api/v1/categorie", function( data ) {
         let code=''
         data.categorie.forEach(element => {
-            code += '<img src="'+element.src+'"title="'+element.title+'">'
+            code += "<a href='/categorie/"+element.id+"'> <img src="+element.src+" alt='" + element.title + "' title='" + element.title + "' /> </a>"
         });
         $('#store').html(code) 
     });

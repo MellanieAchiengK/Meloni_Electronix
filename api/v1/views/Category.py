@@ -6,13 +6,7 @@ Liste of the Category product
 from flask import jsonify
 from views import app_views
 
-
-@app_views.route(
-    '/categorie',
-    methods=['GET'],
-    strict_slashes=False)
-def categories_all():
-    categorie = [
+categorie = [
     {
         "id":"1",
         "src":"https://www.shutterstock.com/image-photo/document-management-system-dms-being-600w-1874749972.jpg",
@@ -34,4 +28,18 @@ def categories_all():
         "title":"Flickr picture by sea turtle"
     }
 ]
+
+@app_views.route(
+    '/categorie',
+    methods=['GET'],
+    strict_slashes=False)
+def categories_all():
     return jsonify({'categorie':categorie}), 200
+
+@app_views.route(
+    '/categorie/<int:pk>',
+    methods=['GET'],
+    strict_slashes=False)
+def liste_article_categories(pk):
+    listecategorie = categorie
+    return jsonify({"listecategorie":listecategorie}), 200
