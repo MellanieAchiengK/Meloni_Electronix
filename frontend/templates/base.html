@@ -11,15 +11,15 @@
         {% endblock %}
     </HEAD>
     <BODY>
-        <div class="container-fluid m-2">
+        <div class="container-fluid m-2 h-25" >
             <div class="row">
                 <div class="col-sm border border-secondary">
-                  Logo
+                    <img src="{{ url_for('static', filename='/images/logo.png') }}" alt="Melonie Electronique" title="Melonie Electronique" class="rounded-circle w-100 p-3"/>
                 </div>
                 <div class="col-sm col-8 border border-success">
                     <nav id="navigation" class="navbar navbar-expand text-uppercase fw-bold">
                         {% block navbar %}
-                            <a class="navbar-brand" href="...">Product</a>
+                            <a class="navbar-brand" href="/">Product</a>
                             <a class="navbar-brand" href="...">Features</a>
                             <a class="navbar-brand" href="...">Contact</a>
                         {% endblock %}

@@ -35,6 +35,7 @@ def get_article(pk):
 
 @app.route("/categorie/<int:pk>")
 def articebycategorie(pk):
+    #return "category:{}".format(pk)
     return render_template('articleByCategory.html', id=pk)
 
 if __name__ == '__main__':
