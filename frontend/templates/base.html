@@ -7,7 +7,7 @@
         {% block head %}
             <script src="{{ url_for('static', filename='scripts/hello.js') }}"></script>
             <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
-            <title>{% block title %}{% endblock %} - My Webpage</title>
+            <title>{% block title %} {% endblock %}</title>
         {% endblock %}
     </HEAD>
     <BODY>
@@ -17,7 +17,7 @@
                   Logo
                 </div>
                 <div class="col-sm col-8 border border-success">
-                    <nav id="navigation" class="navbar navbar-expand">
+                    <nav id="navigation" class="navbar navbar-expand text-uppercase fw-bold">
                         {% block navbar %}
                             <a class="navbar-brand" href="...">Product</a>
                             <a class="navbar-brand" href="...">Features</a>
