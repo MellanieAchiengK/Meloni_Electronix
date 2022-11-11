@@ -1,0 +1,12 @@
+{% extends "/frontend/templates/base.html" %}
+{% block title %}Hello{% endblock %}
+{% block head %}
+    <script src="{{ url_for('static', filename='/frontend/static/scripts/home.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/frontend/static/styles/acceuil_style.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div id="store">
+     
+    </div>
+{% endblock %}

@@ -7,26 +7,30 @@ from flask import Flask, render_template
 from views import app_views
 from os import getenv
 
+BACKOFFICE_TEMPLATE='/backoffice/templates/'
+BACKOFFICE_STATIC='/backoffice/static/'
+FRONTEND_TEMPLATE='/frontend/templates/'
+FRONTEND_STATIC='/frontend/static/'
 
 app = Flask(__name__,
-            static_folder='../../frontend/static',
-            template_folder='../../frontend/templates')
+            static_folder='../../web',
+            template_folder='../../web')
 app.register_blueprint(app_views)
 
 
 @app.route("/")
 def hello_world():
-    return render_template('home.html')
+    return render_template(FRONTEND_TEMPLATE+'home.html')
 
 
 @app.route("/presentation")
 def presentation():
-    return render_template('presentation.html')
+    return render_template(FRONTEND_TEMPLATE+'presentation.html')
 
 
 @app.route("/landing")
 def landing_page():
-    return render_template('landing_page.html')
+    return render_template(FRONTEND_TEMPLATE+'landing_page.html')
 
 
 @app.route("/article/<int:pk>")
@@ -36,7 +40,7 @@ def get_article(pk):
 @app.route("/categorie/<int:pk>")
 def articebycategorie(pk):
     #return "category:{}".format(pk)
-    return render_template('articleByCategory.html', id=pk)
+    return render_template(FRONTEND_TEMPLATE+'articleByCategory.html', id=pk)
 
 if __name__ == '__main__':
     api_host = getenv('MELONIE_ELECTRONIX_HOST', default='0.0.0.0')
