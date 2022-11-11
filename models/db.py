@@ -3,7 +3,6 @@
 Contains the class Db
 """
 
-import models
 from models.base_model import BaseModel, Base
 import sqlalchemy
 from sqlalchemy import create_engine

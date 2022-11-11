@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 """ holds class User"""
 
-import models
 from models.base_model import BaseModel, Base
 import sqlalchemy
-from sqlalchemy import Column, String
+from sqlalchemy import Column, String, Integer, ForeignKey
 from sqlalchemy.orm import relationship
 from hashlib import md5
 
@@ -12,12 +11,16 @@ from hashlib import md5
 class User(BaseModel, Base):
     """Representation of a user """
     __tablename__ = 'users'
-    email = Column(String(128), nullable=False)
-    password = Column(String(128), nullable=False)
     first_name = Column(String(128), nullable=True)
     last_name = Column(String(128), nullable=True)
-    places = relationship("Place", backref="user")
-    reviews = relationship("Review", backref="user")
+    phone1 = Column(String(25), nullable=True)
+    phone2 = Column(String(25), nullable=True)
+    email = Column(String(128), nullable=False)
+    password = Column(String(128), nullable=False)
+    city_id = Column(Integer, ForeignKey("cities.id"), nullable=False)
+    adresses = relationship("Adresse", backref="user")
+    orders = relationship("Order", backref="user")
+    payements = relationship("Payement", backref="user")
 
     def __init__(self, *args, **kwargs):
         """initializes user"""
