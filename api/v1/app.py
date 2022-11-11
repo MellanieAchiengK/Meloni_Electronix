@@ -16,7 +16,7 @@ app.register_blueprint(app_views)
 
 @app.route("/")
 def hello_world():
-    return render_template('acceuil.html')
+    return render_template('home.html')
 
 
 @app.route("/presentation")
@@ -29,9 +29,13 @@ def landing_page():
     return render_template('landing_page.html')
 
 
+@app.route("/article/<int:pk>")
+def get_article(pk):
+    return "afficher artcile id = {}".format(pk)
+
 @app.route("/categorie/<int:pk>")
 def articebycategorie(pk):
-    return render_template('articleByCategorie.html', id=pk)
+    return render_template('articleByCategory.html', id=pk)
 
 if __name__ == '__main__':
     api_host = getenv('MELONIE_ELECTRONIX_HOST', default='0.0.0.0')
