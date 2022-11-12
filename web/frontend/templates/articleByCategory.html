@@ -1,13 +1,12 @@
 {% extends "/frontend/templates/base.html" %}
 {% block title %}Hello{% endblock %}
-{% block head %}
-    <script src="{{ url_for('static', filename='/frontend/static/scripts/articleByCategory.js') }}"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='/frontend/static/styles/acceuil_style.css') }}">
-{% endblock %}
+
 {% block content %}
     <h1>Liste article of categorie </h1>
     <div id="store" >
-        {{ id }}
+        {% for article in listecategorie %}
+            <a href='/article/{{ article.id }}'> <img src={{ article.src }} alt={{ article.title }} title={{ article.title }} /> </a>
+        {% endfor %}
     </div>
 
 {% endblock %}

@@ -6,7 +6,7 @@ Melonie_Electronix implementation
 from flask import Flask, render_template
 from views import app_views
 from os import getenv
-import urllib.request
+import requests
 
 
 BACKOFFICE_TEMPLATE='/backoffice/templates/'
@@ -44,11 +44,11 @@ def get_article(pk):
 
 @app.route("/categorie/<int:pk>")
 def articebycategorie(pk):
-    """ with urllib.request.urlopen(+ME_MYSQL_HOST+'') as response:
-        html = response.read() """
-    print("hello debogue")
-    return "category:{}".format(pk)
-    #return render_template(FRONTEND_TEMPLATE+'articleByCategory.html', id=pk)
+    r = requests.get('http://{}:{}/api/v1/categorie/{}'.format(
+                     api_host, api_port, pk))
+    print("hello debogue:", r.json())
+    return render_template(FRONTEND_TEMPLATE+'articleByCategory.html',
+                            listecategorie=r.json().get('listecategorie'))
 
 
 if __name__ == '__main__':
