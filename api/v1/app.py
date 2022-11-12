@@ -6,11 +6,16 @@ Melonie_Electronix implementation
 from flask import Flask, render_template
 from views import app_views
 from os import getenv
+import urllib.request
+
 
 BACKOFFICE_TEMPLATE='/backoffice/templates/'
 BACKOFFICE_STATIC='/backoffice/static/'
 FRONTEND_TEMPLATE='/frontend/templates/'
 FRONTEND_STATIC='/frontend/static/'
+
+api_host = getenv('ME_MYSQL_HOST', default='0.0.0.0')
+api_port = getenv('ME_MYSQL_PORT', default=5000)
 
 app = Flask(__name__,
             static_folder='../../web',
@@ -39,11 +44,12 @@ def get_article(pk):
 
 @app.route("/categorie/<int:pk>")
 def articebycategorie(pk):
-    #return "category:{}".format(pk)
-    return render_template(FRONTEND_TEMPLATE+'articleByCategory.html', id=pk)
+    """ with urllib.request.urlopen(+ME_MYSQL_HOST+'') as response:
+        html = response.read() """
+    print("hello debogue")
+    return "category:{}".format(pk)
+    #return render_template(FRONTEND_TEMPLATE+'articleByCategory.html', id=pk)
 
 
 if __name__ == '__main__':
-    api_host = getenv('MELONIE_ELECTRONIX_HOST', default='0.0.0.0')
-    api_port = getenv('MELONIE_ELECTRONIX_PORT', default=5000)
     app.run(host=api_host, port=int(api_port), threaded=True)
