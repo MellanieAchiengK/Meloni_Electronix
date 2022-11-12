@@ -5,7 +5,8 @@ Liste of the Category product
 
 from flask import jsonify
 from views import app_views
-# from models.category import Category
+from models import storage
+from models.category import Category
 
 categorie = [
     {

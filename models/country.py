@@ -14,7 +14,7 @@ class Country(BaseModel, Base):
     name = Column(String(128), nullable=False)
     nicename = Column(String(128), nullable=False)
     iso3 = Column(String(128), nullable=False)
-    numcode = Column(Integer(6), nullable=False)
+    numcode = Column(Integer(), nullable=False)
     phonecode = Column(Integer, nullable=False)
     cities = relationship("City", backref="country",
                           cascade="all, delete, delete-orphan")

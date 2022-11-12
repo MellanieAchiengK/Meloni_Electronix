@@ -14,11 +14,11 @@ class Order(BaseModel, Base):
     order_number = Column(String(60), nullable=False)
     ordered = Column(DateTime, default=datetime.utcnow)
     shipped = Column(DateTime)
-    status = Column(Integer(1),
+    status = Column(Integer(),
                     comment="1=New, 2=Hold, 3=Shipped, 4=delivered, 5=closed")
     total = Column(Integer, nullable=False)
-    address_id = Column(Integer, ForeignKey("addresses.id"), nullable=False)
-    user_id = Column(Integer, ForeignKey("addresses.id"), nullable=False,
+    address_id = Column(Integer, ForeignKey("adresse.id"), nullable=False)
+    user_id = Column(Integer, ForeignKey("adresse.id"), nullable=False,
                      comment="customer id")
     order_lines = relationship("orderLine", secondary="order_lines",
                                backref='order',
