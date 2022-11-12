@@ -22,6 +22,7 @@ install the dependence
 pip install -r requirements.txt
 ```
 
+start of the project
 ```
 export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
 ME_MYSQL_USER=melani_dev ME_MYSQL_PWD=Mel0ni_dev_123 ME_MYSQL_HOST=localhost ME_MYSQL_DB=ME_db python3 api/v1/app.py
