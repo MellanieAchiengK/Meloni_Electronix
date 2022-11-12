@@ -25,7 +25,11 @@ app.register_blueprint(app_views)
 
 @app.route("/")
 def hello_world():
-    return render_template(FRONTEND_TEMPLATE+'home.html')
+    r = requests.get('http://{}:{}/api/v1/categorie/'.format(
+                     api_host, api_port))
+    print('r: ',r.json().get('categorie'))
+    return render_template(FRONTEND_TEMPLATE+'home.html',
+                            categorie=r.json().get('categorie'))
 
 
 @app.route("/presentation")
@@ -40,13 +44,17 @@ def landing_page():
 
 @app.route("/article/<int:pk>")
 def get_article(pk):
-    return "afficher artcile id = {}".format(pk)
+    #return "afficher artcile id = {}".format(pk)
+    r = requests.get('http://{}:{}/api/v1/article/{}'.format(
+                     api_host, api_port, pk))
+    """ print("r=",r.json()["article"]) """
+    return render_template(FRONTEND_TEMPLATE+'articleDetail.html',
+                            article=r.json()["article"])
 
 @app.route("/categorie/<int:pk>")
 def articebycategorie(pk):
     r = requests.get('http://{}:{}/api/v1/categorie/{}'.format(
                      api_host, api_port, pk))
-    print("hello debogue:", r.json())
     return render_template(FRONTEND_TEMPLATE+'articleByCategory.html',
                             listecategorie=r.json().get('listecategorie'))
 

@@ -6,6 +6,7 @@
     <div id="store" >
         {% for article in listecategorie %}
             <a href='/article/{{ article.id }}'> <img src={{ article.src }} alt={{ article.title }} title={{ article.title }} /> </a>
+            <h2> {{ article.title}} </h2>
         {% endfor %}
     </div>
 
