@@ -2,9 +2,8 @@
 """
 Contains class BaseModel
 """
-
+from models import storage
 from datetime import datetime
-import models
 import sqlalchemy
 from sqlalchemy import Column, Integer, DateTime
 from sqlalchemy.ext.declarative import declarative_base
@@ -46,8 +45,8 @@ class BaseModel:
     def save(self):
         """updates the attribute 'updated_at' with the current datetime"""
         self.updated_at = datetime.utcnow()
-        models.storage.new(self)
-        models.storage.save()
+        storage.new(self)
+        storage.save()
 
     def to_dict(self):
         """returns a dictionary containing all keys/values of the instance"""
@@ -65,4 +64,4 @@ class BaseModel:
 
     def delete(self):
         """delete the current instance from the storage"""
-        models.storage.delete(self)
+        storage.delete(self)

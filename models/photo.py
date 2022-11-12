@@ -12,5 +12,5 @@ class Photo(BaseModel, Base):
     product_id = Column(Integer, ForeignKey("products.id"), nullable=False)
 
     def __init__(self, *args, **kwargs):
-        """initializes payement"""
+        """initializes photo"""
         super().__init__(*args, **kwargs)

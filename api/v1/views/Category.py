@@ -5,7 +5,7 @@ Liste of the Category product
 
 from flask import jsonify
 from views import app_views
-# from models.category import Category
+# from models import category
 
 categorie = [
     {
@@ -43,4 +43,4 @@ def categories_all():
     strict_slashes=False)
 def liste_article_categories(pk):
     listecategorie = categorie
-    return jsonify({"listecategorie":listecategorie}), 200
+    return jsonify({"listecategorie": listecategorie}), 200

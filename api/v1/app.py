@@ -3,8 +3,8 @@
 Melonie_Electronix implementation
 """
 
-from flask import Flask, render_template
 from views import app_views
+from flask import Flask, render_template
 from os import getenv
 
 BACKOFFICE_TEMPLATE='/backoffice/templates/'

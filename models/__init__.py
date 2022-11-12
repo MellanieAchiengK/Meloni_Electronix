@@ -3,5 +3,5 @@
 initialize the models package
 """
 
-from models.db import Db
-storage = Db()
+from models.engine.db_storage import DBStorage
+storage = DBStorage()

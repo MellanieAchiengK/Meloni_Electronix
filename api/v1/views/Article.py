@@ -5,6 +5,7 @@ Liste of the produit
 
 from flask import jsonify
 from views import app_views
+from models.article import Article
 
 article1={
     "title":"Ordinateur",

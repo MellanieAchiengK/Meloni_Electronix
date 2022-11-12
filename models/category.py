@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ holds class Category"""
+import models
 from datetime import datetime
 from models.base_model import BaseModel, Base
 import sqlalchemy

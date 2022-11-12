@@ -2,8 +2,7 @@
 """
 Contains the class Db
 """
-
-from models.base_model import BaseModel, Base
+from .base_model import BaseModel, Base
 import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
