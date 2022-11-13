@@ -34,6 +34,15 @@ http://127.0.0.1:5000/presentation
 http://127.0.0.1:5000/api/v1/produit
 ```
 
+Or simply run the ./start script to start your project
+```
+./start
+```
+to work with the console, you must pass the console parameter to the scrpit
+```
+./start console
+```
+
 to disable the virtual environment 
 ```
 deactivate

@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ Console Module """
+
 import cmd
 from pprint import pprint
 import sys
