@@ -5,11 +5,11 @@
 {% endblock %}
 
 {% block content %}
-    <h1>category for article </h1>
-    <div id="categorie" >
-        {% for article in categorie %}
-            <a href='/categorie/{{ article.id }}'> <img src={{ article.src }} alt={{ article.title }} title={{ article.title }} /> </a>
+    <h1>Detail for article </h1>
+    <div id="article" >
+        <a href='/article/{{ article.id }}'> <img src={{ article.src }} alt={{ article.title }} title={{ article.title }} /> </a>
             <h2> {{ article.title}} </h2>
-        {% endfor %}
+            <h2>Description</h2>
+            {{ article.description}}
     </div>
 {% endblock %}

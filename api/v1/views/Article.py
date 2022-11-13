@@ -33,4 +33,4 @@ def article_all():
     strict_slashes=False)
 def get_article(pk):
     
-    return jsonify({'artcile':article1})
+    return jsonify({'article':article1})
