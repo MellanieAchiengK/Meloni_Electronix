@@ -2,10 +2,36 @@
 """
 Contains the class Db
 """
-from .base_model import BaseModel, Base
+
+from models.base_model import BaseModel, Base
+from models.address import Address
+from models.category import Category
+from models.city import City
+from models.country import Country
+from models.order_lines import OrderLine
+from models.order import Order
+from models.payement import Payement
+from models.photo import Photo
+from models.product import Product
+from models.user import User
 import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
+from os import getenv
+
+
+classes = {
+            "Adresse": Address,
+            "Category": Category,
+            "City": City,
+            "Country": Country,
+            "OrderLine": OrderLine,
+            "Order": Order,
+            "Payement": Payement,
+            "Photo": Photo,
+            "Product": Product,
+            "User": User
+        }
 
 
 class Db:
@@ -15,26 +41,27 @@ class Db:
 
     def __init__(self):
         """Instantiate a DBStorage object"""
-        HBNB_MYSQL_USER = 'root'
-        HBNB_MYSQL_PWD = 'phpmyadmin'
-        HBNB_MYSQL_HOST = 'localhost'
-        HBNB_MYSQL_DB = 'crud'
+        ME_MYSQL_USER = getenv('ME_MYSQL_USER')
+        ME_MYSQL_PWD = getenv('ME_MYSQL_PWD')
+        ME_MYSQL_HOST = getenv('ME_MYSQL_HOST')
+        ME_MYSQL_DB = getenv('ME_MYSQL_DB')
         self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.
-                                      format(HBNB_MYSQL_USER,
-                                             HBNB_MYSQL_PWD,
-                                             HBNB_MYSQL_HOST,
-                                             HBNB_MYSQL_DB))
+                                      format(ME_MYSQL_USER,
+                                             ME_MYSQL_PWD,
+                                             ME_MYSQL_HOST,
+                                             ME_MYSQL_DB))
+        """ self.__engine = create_engine('sqlite:///melani_electronique.db', echo = True) """
 
-    # def all(self, cls=None):
-        """query on the current database session"""
-        """ new_dict = {}
+    def all(self, cls=None):
+        """ query on the current database session"""
+        new_dict = {}
         for clss in classes:
             if cls is None or cls is classes[clss] or cls is clss:
                 objs = self.__session.query(classes[clss]).all()
                 for obj in objs:
                     key = obj.__class__.__name__ + '.' + obj.id
                     new_dict[key] = obj
-        return (new_dict) """
+        return (new_dict)
 
     def new(self, obj):
         """add the object to the current database session"""
@@ -59,12 +86,6 @@ class Db:
         sess_factory = sessionmaker(bind=self.__engine, expire_on_commit=False)
         Session = scoped_session(sess_factory)
         self.__session = Session
-
-    # def count(self, cls=None):
-        """Returns the number of objects in storage matching the given class"""
-        """ if cls is not None:
-            return self.__session.query(cls).count()
-        return len(self.all()) """
 
     def close(self):
         """call remove() method on the private session attribute"""

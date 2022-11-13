@@ -13,9 +13,9 @@ class Category(BaseModel, Base):
     __tablename__ = 'categories'
     name = Column(String(128), nullable=False)
     image = Column(String(128), nullable=True)
-    products = relationship("Product", backref='category',
+    """ products = relationship("Product", backref='category',
                             cascade="all, delete, delete-orphan")
-
+ """
     def __init__(self, *args, **kwargs):
         """initializes category"""
         super().__init__(*args, **kwargs)

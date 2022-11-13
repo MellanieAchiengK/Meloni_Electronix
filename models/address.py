@@ -10,10 +10,10 @@ from sqlalchemy.orm import relationship
 
 class Address(BaseModel, Base):
     """Representation of Address """
-    __tablename__ = 'addresss'
+    __tablename__ = 'adresse'
     street = Column(String(60), nullable=True)
     zip_code = Column(String(10), nullable=True)
-    status = Column(Integer(1),
+    status = Column(Integer(),
                     comment="1=New, 2=Hold, 3=Shipped, 4=delivered, 5=closed")
     country_id = Column(Integer, ForeignKey("countries.id"), nullable=False)
     city_id = Column(Integer, ForeignKey("cities.id"), nullable=False)
