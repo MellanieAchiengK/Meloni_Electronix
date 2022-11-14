@@ -121,7 +121,7 @@ class HBNBCommand(cmd.Cmd):
             return
 
         new_instance = HBNBCommand.classes[classe]()
-
+        
         if len(parametre) != 0:
             parametre = parametre.split(' ')
             k, value = '', ''
