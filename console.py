@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ Console Module """
+
 import cmd
 from pprint import pprint
 import sys
@@ -22,7 +23,7 @@ class HBNBCommand(cmd.Cmd):
     """ Contains the functionality for the HBNB console"""
 
     # determines prompt for interactive/non-interactive modes
-    prompt = '(hbnb) ' if sys.__stdin__.isatty() else ''
+    prompt = '(Melanie_Electronic) ' if sys.__stdin__.isatty() else ''
 
     classes = {
                'BaseModel': BaseModel, 'User': User, 'Address': Address,
@@ -40,7 +41,7 @@ class HBNBCommand(cmd.Cmd):
     def preloop(self):
         """Prints if isatty is false"""
         if not sys.__stdin__.isatty():
-            print('(hbnb)')
+            print('(Melanie_Electronic)')
 
     def precmd(self, line):
         """Reformat command line for advanced command syntax.
