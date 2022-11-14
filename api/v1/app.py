@@ -24,6 +24,7 @@ app = Flask(__name__,
 app.register_blueprint(app_views)
 
 
+
 @app.route("/")
 def hello_world():
     r = requests.get('http://{}:{}/api/v1/categorie/'.format(
@@ -42,7 +43,7 @@ def landing_page():
     return render_template(FRONTEND_TEMPLATE+'landing_page.html')
 
 
-@app.route("/article/<string:pk>")
+@app.route("/article/<int:pk>")
 def get_article(pk):
     # return "afficher artcile id = {}".format(pk)
     r = requests.get('http://{}:{}/api/v1/article/{}'.format(
@@ -52,7 +53,7 @@ def get_article(pk):
                            article=r.json()["article"])
 
 
-@app.route("/categorie/<string:pk>")
+@app.route("/categorie/<int:pk>")
 def articebycategorie(pk):
     r = requests.get('http://{}:{}/api/v1/categorie/{}'.format(
                      api_host, api_port, pk))
