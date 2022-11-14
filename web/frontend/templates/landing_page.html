@@ -1,10 +1,21 @@
 {% extends "base.html" %}
 {% block title %}Hello{% endblock %}
 {% block head %}
- Landing page
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/landing_page.css') }}">
 {% endblock %}
 {% block content %}
   <h1>Index</h1>
   <p class="important">
-    Wexlome to Melonie electronique Landing page
+    Landing Page
+  <div class="container">
+  <nav>
+  <ul class="bar">
+    <li><a href="#">Product</a></li>
+    <li><a href="#">Features</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#">Sign Up</a></li>
+  </ul>
+  </nav>
+</div>
+
 {% endblock %}
