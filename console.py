@@ -18,7 +18,6 @@ from models.photo import Photo
 from models.product import Product
 
 
-
 class HBNBCommand(cmd.Cmd):
     """ Contains the functionality for the HBNB console"""
 

@@ -11,6 +11,13 @@ create a databases
 cat setup_mysql_dev.sql | mysql -hlocalhost -uroot -p
 ```
 
+
+Drop all tables
+
+```
+cat drop_all_tables_of_current_db.sql | mysql -uroot -p ME_db
+```
+
 Create a environement virtual
 ```
 cd Melanie_Electronix

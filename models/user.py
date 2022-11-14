@@ -18,7 +18,7 @@ class User(BaseModel, Base):
     email = Column(String(128), nullable=False)
     password = Column(String(128), nullable=False)
     city_id = Column(Integer, ForeignKey("cities.id"), nullable=False)
-    adresses = relationship("Adresse", backref="adresse")
+    adresses = relationship("Address", backref="address")
     orders = relationship("Order", backref="user")
     payements = relationship("Payement", backref="user")
 

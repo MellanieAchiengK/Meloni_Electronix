@@ -2,13 +2,14 @@
 """ holds class OrderLine"""
 from models.base_model import BaseModel, Base
 import sqlalchemy
-from sqlalchemy import Column, String, Integer, ForeignKey
+from sqlalchemy import Column, Integer, ForeignKey, Numeric
+from sqlalchemy.orm import relationship
 
 
 class OrderLine(BaseModel, Base):
     """Representation of OrderLine """
     __tablename__ = 'order_lines'
-    cost_price = Column(Integer, nullable=False)
+    selling_price = Column(Numeric(10, 2), nullable=False)
     quantity = Column(Integer, nullable=False, default=0)
     order_id = Column(Integer, ForeignKey('orders.id'), nullable=False)
     product_id = Column(Integer, ForeignKey('products.id'), nullable=False)
