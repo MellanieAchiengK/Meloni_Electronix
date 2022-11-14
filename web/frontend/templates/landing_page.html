@@ -1,21 +1,25 @@
 {% extends "base.html" %}
 {% block title %}Hello{% endblock %}
 {% block head %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/landing_page.css') }}">
+    <!-- <script src="{{ url_for('static', filename='/frontend/static/images/landing_page.css') }}"></script> -->
+    <!-- <script src="{{ url_for('static', filename='/frontend/static/scripts/landing_page.js') }}"></script> -->
 {% endblock %}
 {% block content %}
-  <h1>Index</h1>
-  <p class="important">
-    Landing Page
-  <div class="container">
-  <nav>
-  <ul class="bar">
-    <li><a href="#">Product</a></li>
-    <li><a href="#">Features</a></li>
-    <li><a href="#">Contact</a></li>
-    <li><a href="#">Sign Up</a></li>
-  </ul>
-  </nav>
-</div>
-
+    <div id="preview" class="preview scrollEditor">
+        <div id="container-ruller" />
+	<div id="preview-content">
+	  <div class="preview-paragraph-0 preview-line 0" data_line_start="0" data_line_end="0" data_line="0,1" count_line="1">
+             <ul class="navbar">
+               <li><a class="navbar-brand" href="...">Highlight</a></li>
+               <li><a class="navbar-brand" href="...">Specification</a></li>
+               <li><a class="navbar-brand" href="...">Compare</a></li>
+             </ul>
+             </nav>
+             </div> 
+  <h1 type="title" class="preview-paragraph-2 preview-line 2 3 4">Iphone 14 Series</h1>
+  <h2 type="section" class="preview-paragraph-6 preview-line 6"><span class="section-number=">""</span ><b> LATEST ARRIVALS<b></h3>
+  <div class="preview-paragraph-8 preview-line-8> Quality and elegance are our top priorities at affordable prices.</div>
+  <div class="preview-paragraph-10 preview-line 10"><img src="https://punemirror.com/static/c1e/client/88062/uploaded/e4edfe4e71b46ae2f1aa850a384c01b5.jpg height=1384&amp;width=1602&amp;top_left_y=452&amp;top_left_x=1622" alt=""></div>
+    </div>
+   </div>
 {% endblock %}
