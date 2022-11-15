@@ -861,16 +861,3 @@ foreignObject[data-mjx-xml] {
   .mmd-context-menu-overlay{
     background: rgba(0, 0, 0, 0.56);
   }
-  
-  .container {
-	  display: flex;
-	  align-items: center;
-	  justify-content: center;
-  }
-  img {
-	  max-width: 100%
-  }
-
-  .image {
-	  flex-basis: 40%
-  }

@@ -1,35 +1,26 @@
 {% extends "base.html" %}
-{% block title %}Hello{% endblock %}
+{% block title %}Meloni Electronix{% endblock %}
 {% block head %}
-     <link rel="stylesheet" href=".../frontend/static/images/style.css">
-     <link rel="stylesheet" href=".../frontend/static/images/landinng_page.css">
+      <link rel="stylesheet" href="{{ url_for('static', filename='frontend/static/styles/style.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='frontend/static/styles/landing_page.css') }}">
+      <link rel="stylesheet" href="https://cdn.mathpix.com/fonts/cmu.css"/>
+      <title>{% block title %}Latest Arrivals {% endblock %}</title>   
 {% endblock %}
 {% block content %}
-<div id="sidebar">
-<div id="outline">
-<header>
-    <a href="home.html"><img src="logo.png" alt="Home"></a>
-</header>
-<nav>
-   <ul>
-      <li><a href="#">Highlight</a></li>
-      <li><a href="#">Specification</a></li>
-      <li><a href="#">Compare</a></li>
-      </ul>
-    </ul>
-</nav>
-</div>
-</div>
-<div id="page-container">
-<main>
-  <h1> Iphone 14 Series </h1>
-    <p> Quality and elegance are our top priorities at affordable prices.</p>
-    <div id="pf1" class="pf w0 h0" data-page-no="1"><img class="bi x0 y0 w1 h1" alt="" src="iphone14series" href="../frontend/static/images/iphone14series.png">
+<body>
+  <div id="preview" class="preview scrollEditor">
+    <div id="container-ruller" />
+    <div id="preview-content">
+	    <div class="preview-paragraph-0 preview-line 0" data_line_start="0" data_line_end="0" data_line="0,1" count_line="1"> Highlight Specification Compare</div> 
+  <h1 type="title" class="main-title preview-paragraph-2 preview-line 2 3 4" id="iphone-14-series" data_line_start="2" data_line_end="4" data_line="2,5" count_line="3">
+Iphone 14 Series</h1>
+  <div class="container">
+    <div class="image">
+	<img src="iphone14series" href="../frontend/static/images/iphone14series.png" alt=""></div>
     </div>
-    <div class="loading-indicator">
-	<img alt="" src="indicator" href="../frontend/static/images/indicator.png">
-</div>
-<footer>
-	Meloni Electronix
-</footer>
+    <h2><p class="important"> LATEST ARRIVALS </h2>
+    <p> Quality and elegance are our top priorities at affordable prices. </p>
+  </div>
+</body>
+</html>
 {% endblock %}
