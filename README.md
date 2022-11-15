@@ -29,10 +29,6 @@ install the dependence
 pip install -r requirements.txt
 ```
 
-export the project path in the PYTHONPATH variable to avoid import errors
-```
-export PYTHONPATH="${PYTHONPATH}:/path/to/your/project/"
-```
 start of the project
 
 ```
