@@ -4,9 +4,10 @@ Melonie_Electronix implementation
 """
 
 from views import app_views
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 from os import getenv
 import requests
+
 
 
 BACKOFFICE_TEMPLATE = '/backoffice/templates/'
@@ -22,6 +23,7 @@ app = Flask(__name__,
             static_folder='../../web',
             template_folder='../../web')
 app.register_blueprint(app_views)
+
 
 
 @app.route("/")
@@ -42,7 +44,23 @@ def landing_page():
     return render_template(FRONTEND_TEMPLATE+'landing_page.html')
 
 
-@app.route("/article/<string:pk>")
+@app.route("/login", methods=['GET'])
+def page_connexion_get():
+    return render_template(FRONTEND_TEMPLATE+'connexion.html')
+
+
+@app.route("/login", methods=['POST'])
+def page_connexion_post():
+    msg = 'erreur'
+    verite = True
+    username = request.form['username']
+    password = request.form['password']
+    if verite:
+        return   redirect('/')
+    return render_template(FRONTEND_TEMPLATE+'connexion.html', msg='')
+
+
+@app.route("/article/<int:pk>")
 def get_article(pk):
     # return "afficher artcile id = {}".format(pk)
     r = requests.get('http://{}:{}/api/v1/article/{}'.format(
@@ -52,7 +70,7 @@ def get_article(pk):
                            article=r.json()["article"])
 
 
-@app.route("/categorie/<string:pk>")
+@app.route("/categorie/<int:pk>")
 def articebycategorie(pk):
     r = requests.get('http://{}:{}/api/v1/categorie/{}'.format(
                      api_host, api_port, pk))
@@ -66,4 +84,4 @@ def dashboard():
 
 
 if __name__ == '__main__':
-    app.run(host=api_host, port=int(api_port), threaded=True)
+    app.run(host=api_host, port=int(api_port), threaded=True, debug=True)
