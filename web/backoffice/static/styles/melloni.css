@@ -1,0 +1,14 @@
+/*!
+ *   Melloni v1.0.0
+ *   Author: Djogona Mahamat
+ */
+
+ /* Braand link on admin dashboard */
+.brand-link .brand-image {
+  margin-left: 0rem !important;
+  max-height: 56px !important;
+}
+
+.brand-dash {
+  border: none !important;
+}
