@@ -60,6 +60,19 @@ def page_connexion_post():
     return render_template(FRONTEND_TEMPLATE+'connexion.html', msg='')
 
 
+@app.route("/register", methods=['GET'])
+def page_regiter_get():
+    return render_template(FRONTEND_TEMPLATE+'register.html', msg='')
+
+
+@app.route("/register", methods=['POST'])
+def page_regiter_post():
+    username = request.form['username']
+    password = request.form['password']
+    email = request.form['email']
+    return "{} {} et {} enrigistré avec succes".format(username, password, email)
+
+
 @app.route("/article/<int:pk>")
 def get_article(pk):
     # return "afficher artcile id = {}".format(pk)
