@@ -80,4 +80,4 @@ def get_id_country_name(country_name):
         print(dic['name'])
         if country_name == dic['name']:
             id = dic['id']
-    return jsonify({"id": id}), 200
+    return jsonify({"id": id}), 200 
