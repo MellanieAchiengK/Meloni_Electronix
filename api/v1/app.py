@@ -41,6 +41,7 @@ def presentation():
 
 @app.route("/landing")
 def landing_page():
+    #return "hello landing page"
     return render_template(FRONTEND_TEMPLATE+'landing_page.html')
 
 
