@@ -7,7 +7,7 @@ from sqlalchemy import Column, String, ForeignKey, Integer
 from sqlalchemy.orm import relationship
 
 
-class City(Base):
+class City(BaseModel, Base):
     """Representation of city """
     __tablename__ = 'cities'
     id = Column(Integer, primary_key=True)
