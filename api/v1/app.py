@@ -10,7 +10,6 @@ import requests
 from models import storage
 
 
-
 BACKOFFICE_TEMPLATE = '/backoffice/templates/'
 BACKOFFICE_STATIC = '/backoffice/static/'
 FRONTEND_TEMPLATE = '/frontend/templates/'
@@ -112,6 +111,23 @@ def articebycategorie(pk):
 @app.route("/me-admin")
 def dashboard():
     return render_template(BACKOFFICE_TEMPLATE+'dashboard.html')
+
+
+@app.route("/me-admin/products")
+def products_index():
+    return render_template(BACKOFFICE_TEMPLATE+'products/index.html')
+
+
+@app.route("/me-admin/categories")
+def categories_index():
+    return render_template(BACKOFFICE_TEMPLATE+'categories/index.html')
+
+
+@app.route("/me-admin/categories/create", methods=["GET", "POST"])
+def categories_create():
+    if request.method == 'POST':
+        print('request.form')
+    return render_template(BACKOFFICE_TEMPLATE+'categories/create.html')
 
 
 if __name__ == '__main__':

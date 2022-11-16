@@ -7,9 +7,10 @@ from sqlalchemy import Column, String, ForeignKey, Integer
 from sqlalchemy.orm import relationship
 
 
-class City(BaseModel, Base):
+class City(Base):
     """Representation of city """
     __tablename__ = 'cities'
+    id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
     country_id = Column(Integer, ForeignKey('countries.id'), nullable=False)
     users = relationship("User", backref="users",
