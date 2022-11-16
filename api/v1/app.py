@@ -69,8 +69,11 @@ def page_regiter_get():
 def page_regiter_post():
     username = request.form['username']
     password = request.form['password']
+    confirm_password = request.form['confirm_password']
+    contry =  request.form['contry']
+    citie = request.form['citie']
     email = request.form['email']
-    return "{} {} et {} enrigistré avec succes".format(username, password, email)
+    return "{} {} et {} enrigistré avec succes // {} habite a {} dans {}".format(username, password, email, confirm_password, contry, citie)
 
 
 @app.route("/article/<int:pk>")
