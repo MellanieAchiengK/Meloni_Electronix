@@ -9,10 +9,16 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{url_for('static', filename='/backoffice/static/plugins/fontawesome-free/css/all.min.css')}}">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="{{url_for('static', filename='/backoffice/static/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='/backoffice/static/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='/backoffice/static/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bootstrap 4 -->
   <link rel="stylesheet" href="{{url_for('static', filename='/backoffice/static/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="{{url_for('static', filename='/backoffice/static/plugins/select2/css/select2.min.css')}}">
   <!-- iCheck -->
   <link rel="stylesheet" href="{{url_for('static', filename='/backoffice/static/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
   <!-- JQVMap -->
@@ -26,6 +32,7 @@
   <link rel="stylesheet" href="{{url_for('static', filename='/backoffice/static/plugins/daterangepicker/daterangepicker.css')}}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{url_for('static', filename='/backoffice/static/plugins/summernote/summernote-bs4.min.css')}}">
+  {% block style %}{% endblock %}
 </head>
 <body class="hold-transition sidebar-mini {% block bodyclass %}{% endblock %}">
 <div class="wrapper">
@@ -188,7 +195,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="/" class="nav-link active">
+            <a href="/me-admin" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -196,7 +203,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/products" class="nav-link">
+            <a href="/me-admin/products" class="nav-link">
               <i class="nav-icon fa fa-database"></i>
               <p>
                 Products
@@ -204,7 +211,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/orders" class="nav-link">
+            <a href="/me-admin/orders" class="nav-link">
               <i class="nav-icon fa fa-shopping-cart"></i>
               <p>
                 Orders
@@ -212,7 +219,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/users" class="nav-link">
+            <a href="/me-admin/users" class="nav-link">
               <i class="nav-icon fa fa-users"></i>
               <p>
                 Customers
@@ -220,7 +227,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/categories" class="nav-link">
+            <a href="/me-admin/categories" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Categories
@@ -228,7 +235,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/paramater" class="nav-link">
+            <a href="/me-admin/paramater" class="nav-link">
               <i class="nav-icon fa fa-cog"></i>
               <p>
                 Parameters
@@ -262,6 +269,8 @@
 </script>
 <!-- Bootstrap 4 -->
 <script src="{{url_for('static', filename='/backoffice/static/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- Select2 -->
+<script src="{{url_for('static', filename='/backoffice/static/plugins/select2/js/select2.full.min.js')}}"></script>
 <!-- ChartJS -->
 <script src="{{url_for('static', filename='/backoffice/static/plugins/chart.js/Chart.min.js')}}"></script>
 <!-- Sparkline -->
@@ -280,11 +289,147 @@
 <script src="{{url_for('static', filename='/backoffice/static/plugins/summernote/summernote-bs4.min.js')}}"></script>
 <!-- overlayScrollbars -->
 <script src="{{url_for('static', filename='/backoffice/static/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
+<!-- bs-custom-file-input -->
+<script src="{{url_for('static', filename='/backoffice/static/plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
+<!-- DataTables  & Plugins -->
+<script src="{{url_for('static', filename='/backoffice/static/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{url_for('static', filename='/backoffice/static/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{url_for('static', filename='/backoffice/static/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{url_for('static', filename='/backoffice/static/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+<script src="{{url_for('static', filename='/backoffice/static/plugins/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
+<script src="{{url_for('static', filename='/backoffice/static/plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{url_for('static', filename='/backoffice/static/scripts/adminlte.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <!-- <script src="{{url_for('static', filename='/backoffice/static/scripts/demo.js')}}"></script> -->
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{url_for('static', filename='/backoffice/static/scripts/pages/dashboard.js')}}"></script>
+<!-- <script src="{{url_for('static', filename='/backoffice/static/scripts/pages/dashboard.js')}}"></script> -->
+<script>
+  $(function () {
+    bsCustomFileInput.init();
+  });
+</script>
+<script>
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+    //Initialize Select2 Elements
+    $('.select2bs4').select2({
+      theme: 'bootstrap4'
+    })
+
+    //Datemask dd/mm/yyyy
+    $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+    //Datemask2 mm/dd/yyyy
+    $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
+    //Money Euro
+    $('[data-mask]').inputmask()
+
+    //Date picker
+    $('#reservationdate').datetimepicker({
+        format: 'L'
+    });
+
+    //Date and time picker
+    $('#reservationdatetime').datetimepicker({ icons: { time: 'far fa-clock' } });
+
+    //Date range picker
+    $('#reservation').daterangepicker()
+    //Date range picker with time picker
+    $('#reservationtime').daterangepicker({
+      timePicker: true,
+      timePickerIncrement: 30,
+      locale: {
+        format: 'MM/DD/YYYY hh:mm A'
+      }
+    })
+    //Date range as a button
+    $('#daterange-btn').daterangepicker(
+      {
+        ranges   : {
+          'Today'       : [moment(), moment()],
+          'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
+          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+          'This Month'  : [moment().startOf('month'), moment().endOf('month')],
+          'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        },
+        startDate: moment().subtract(29, 'days'),
+        endDate  : moment()
+      },
+      function (start, end) {
+        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
+      }
+    )
+
+    //Timepicker
+    $('#timepicker').datetimepicker({
+      format: 'LT'
+    })
+
+    //Bootstrap Duallistbox
+    $('.duallistbox').bootstrapDualListbox()
+
+    //Colorpicker
+    $('.my-colorpicker1').colorpicker()
+    //color picker with addon
+    $('.my-colorpicker2').colorpicker()
+
+    $('.my-colorpicker2').on('colorpickerChange', function(event) {
+      $('.my-colorpicker2 .fa-square').css('color', event.color.toString());
+    })
+
+    $("input[data-bootstrap-switch]").each(function(){
+      $(this).bootstrapSwitch('state', $(this).prop('checked'));
+    })
+
+  })
+  // BS-Stepper Init
+  document.addEventListener('DOMContentLoaded', function () {
+    window.stepper = new Stepper(document.querySelector('.bs-stepper'))
+  })
+</script>
+<script>
+  /*==========================================
+    SHOW UPLOADED IMAGE
+ *========================================== */
+  function readURL(input) {
+      if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+              $('#imageResult')
+                  .attr('src', e.target.result);
+          };
+          reader.readAsDataURL(input.files[0]);
+      }
+  }
+
+  $(function () {
+      $('#uploadimage').on('change', function () {
+          readURL(input);
+      });
+  });
+</script>
+<!-- Datatables script -->
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
+{% block scripts %} {% endblock %}
 </body>
 </html>

@@ -18,6 +18,13 @@ Drop all tables
 cat drop_all_tables_of_current_db.sql | mysql -uroot -p ME_db
 ```
 
+
+Fill countries table
+
+```
+cat countries.sql | mysql -uroot -p ME_db
+```
+
 Create a environement virtual
 ```
 cd Melanie_Electronix
