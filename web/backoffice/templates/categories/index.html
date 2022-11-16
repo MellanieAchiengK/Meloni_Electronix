@@ -1,0 +1,84 @@
+{% extends "/backoffice/templates/base.html" %}
+{% block title %}Category list{% endblock %}
+
+{% block style %}
+  <style>
+    
+  </style>
+{% endblock %}
+
+{% block preloader %}
+<!-- Preloader -->
+<div class="preloader flex-column justify-content-center align-items-center">
+  <img class="animation__shake" src="{{ url_for('static', filename='/backoffice/static/images/Meloni loader.png') }}"
+    alt="Meloni logo" height="60" width="60">
+</div>
+{% endblock %}
+
+{% block main_content %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Categories</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="/me-admin/products">Home</a></li>
+            <li class="breadcrumb-item active">Add</li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <!-- /.card -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card-default">
+          <div class="card-header">
+            <h3 class="card-title">Categories list</h3>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <a href="/me-admin/categories/create" class="btn btn-primary">
+              <i class="fa fa-plus"></i> Add new category
+            </a>
+            <table id="example1" class="table table-bordered table-striped">
+              <thead>
+              <tr>
+                <th>Category</th>
+                <th>Actions</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>Trident</td>
+                <td>Internet
+                  Explorer 4.0
+                </td>
+              </tr>
+              </tbody>
+              <tfoot>
+              <tr>
+                <th>Category</th>
+                <th>Action</th>
+              </tr>
+              </tfoot>
+            </table>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+    </div>
+<!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+{% endblock %}
