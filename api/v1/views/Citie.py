@@ -5,16 +5,16 @@ Liste of the produit
 
 from flask import jsonify, request, abort
 from views import app_views
-from models.country import Country
+from models.city import City
 from models import storage
 
 
 @app_views.route(
-    '/country',
+    '/cities',
     methods=['GET'],
     strict_slashes=False)
-def contry_all():
-    countries = storage.all(Country).values()
+def city_all():
+    countries = storage.all(City).values()
     liste = []
     for loop in countries:
         liste.append(loop.to_dict())
@@ -22,36 +22,35 @@ def contry_all():
     
 
 @app_views.route(
-    '/country',
+    '/cities',
     methods=['POST'],
     strict_slashes=False)
-def createContry():
-    #contries = storage.all(Country)
+def createCity():
     data = request.get_json()
 
     if type(data) is not dict:
         abort(404, "Not a JSON")
     if "name" not in data:
         abort(400, "Missing name")
-    contry = Country(**data)
-    storage.new(contry)
+    citie = City(**data)
+    storage.new(citie)
     storage.save()
-    return jsonify(contry.to_dict()), 201
+    return jsonify(citie.to_dict()), 201
 
 
-@app_views.route('/country/<country_id>',
+@app_views.route('/citie/<citie_id>',
                  strict_slashes=False, methods=['DELETE'])
-def delCounty(country_id):
-    state = storage.get(Country, country_id)
-    if state is None:
+def delCity(citie_id):
+    citie = storage.get(City, citie_id)
+    if citie is None:
         abort(404)
-    storage.delete(state)
+    storage.delete(citie)
     storage.save()
     return jsonify({}), 200
 
-@app_views.route('/country/<country_id>',
+@app_views.route('/citie/<citie_id>',
                  strict_slashes=False, methods=['PUT'])
-def updateContry(country_id):
+def updateCity(citie_id):
     data = request.get_json()
 
     if type(data) is not dict:
@@ -59,25 +58,25 @@ def updateContry(country_id):
     if "name" not in data:
         abort(400, "Missing name")
 
-    state = storage.get(Country, country_id)
-    if state is None:
+    citie = storage.get(City, citie_id)
+    if citie is None:
         abort(404)
     black_list = ["id", "created_at", "updated_at"]
     for key, value in data.items():
         if key not in black_list:
-            setattr(state, key, value)
+            setattr(citie, key, value)
     storage.save()
-    return jsonify(state.to_dict()), 200
+    return jsonify(citie.to_dict()), 200
 
 
-@app_views.route('/country/<country_name>',
+@app_views.route('/citie/<citie_name>',
                  strict_slashes=False, methods=['GET'])
-def get_id_country_name(country_name):
-    countries = storage.all(Country).values()
+def get_id_city_name(citie_name):
+    cities = storage.all(City).values()
     id = None
-    for loop in countries:
+    for loop in cities:
         dic = loop.to_dict()
         print(dic['name'])
-        if country_name == dic['name']:
+        if citie_name == dic['name']:
             id = dic['id']
     return jsonify({"id": id}), 200 
