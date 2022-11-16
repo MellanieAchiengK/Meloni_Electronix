@@ -34,11 +34,6 @@ def hello_world():
                            categorie=r.json().get('categorie'))
 
 
-@app.route("/presentation")
-def presentation():
-    return render_template(FRONTEND_TEMPLATE+'presentation.html')
-
-
 @app.route("/landing")
 def landing_page():
     return render_template(FRONTEND_TEMPLATE+'landing_page.html')

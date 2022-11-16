@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block title %}Welcome{% endblock %}
 {% block head %}
-      <link rel="stylesheet" type="text/css" href="../frontend/static/styles/styles.css">
       <link rel="stylesheet" type="text/css" href="../frontend/static/styles/landing_page.css">
       <title>{% block title %} {% endblock %}</title>   
 {% endblock %}
@@ -9,23 +8,23 @@
     <div class="container-fluid m-2 h-25" >
         <div class="row">
             <div class="col-sm border border-secondary">
-                <img src="logo" href="../frontend/static/images/logo.png" alt="Meloni Electronix" title="Meloni Electronix" class="rounded-circle w-100 p-3"/>
+                <img src="logo" href="../frontend/static/images/logo.png?{{ cache_id }}" alt="Meloni Electronix" title="Meloni Electronix" class="rounded-circle w-100 p-3"/>
     </div>
     <div class="col-sm col-8 border border-success">
         <nav id="navigation" class="navbar navbar-expand fw-bold justify-content-center">
             {% block navbar %}
 	       <a class="navbar-brand" href="/"><span><br/>Product</span></a>
-               <img class="image1" src="dropdown" href="../frontend/static/images/dropdown.png"> 
+               <img class="image1" src="dropdown" href="../frontend/static/images/dropdown.png?{{ cache_id }}"> 
 	       <a class="navbar-brand" href="..."><span><br/>Features</span></a>
-               <img class="image2" src="dropdown" href="../frontend/static/images/dropdown.png">
+               <img class="image2" src="dropdown" href="../frontend/static/images/dropdown.png?{{ cache_id }}">
 	       <a class="navbar-brand" href="..."><span><br/>Contact</span></a>
-	       <img class="image3" src="dropdown" href="../frontend/static/images/dropdown.png">
+	       <img class="image3" src="dropdown" href="../frontend/static/images/dropdown.png?{{ cache_id }}">
 	     {% endblock %}
 	 </nav>
     </div>
     <div class="col-sm border border-warning">
          <button type="button">Sign Up</button>
-         <img class="image4" src="user" href="../frontend/static/images/user.png">
+         <img class="image4" src="user" href="../frontend/static/images/user.png?{{ cache_id }}">
     </div>
 
     <div class="container border border-success">
@@ -42,11 +41,11 @@
       <div class="btn-buy"
         <button type="button">BUY NOW</button>
       </div>
-      <img class="image5" src="nav_left" href="../frontend/static/images/nav_left.png">
-      <img class="image6" src="circle" href="../frontend/static/images/circle.png">
-      <img class="image7" src="iphone14" href="../frontend/static/images/iphone14.png">
-      <img class="image8" src="nav_right" href="../frontend/static/images/nav_right.png">
-      <img class="image9" src="arrow" href="../frontend/static/images/arrow.png">
+      <img class="image5" src="nav_left" href="../frontend/static/images/nav_left.png?{{ cache_id }}">
+      <img class="image6" src="circle" href="../frontend/static/images/circle.png?{{ cache_id }}">
+      <img class="image7" src="iphone14" href="../frontend/static/images/iphone14.png?{{ cache_id }}">
+      <img class="image8" src="nav_right" href="../frontend/static/images/nav_right.png?{{ cache_id }}">
+      <img class="image9" src="arrow" href="../frontend/static/images/arrow.png?{{ cache_id }}">
             {% endblock %}
         </div>
 {% endblock %}
