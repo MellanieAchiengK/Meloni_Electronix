@@ -55,6 +55,18 @@
                     <label for="name">Name</label>
                     <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Name">
                   </div>
+                  <div class="form-group">
+                    <label for="uploadimage">Image</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" onchange="readURL(this);" class="custom-file-input" name="image" id="uploadimage">
+                        <label class="custom-file-label" for="uploadimage">Choose a file</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group mt-1">
+                    <img id="imageResult" src="#" alt="" style="max-width: 25%;" class="img-fluid shadow-sm d-block">
+                  </div>
                 </div>
               </div>
             </div>
