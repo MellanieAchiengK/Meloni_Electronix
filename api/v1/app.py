@@ -63,7 +63,18 @@ def page_connexion_post():
 
 @app.route("/register", methods=['GET'])
 def page_regiter_get():
-    return render_template(FRONTEND_TEMPLATE+'register.html', msg='')
+    # recuperer la liste de tous les paysù
+    pays_all = None
+    r = requests.get('http://{}:{}/api/v1/country'.format(
+                     api_host, api_port))
+    if r.status_code == 200:
+        pays_all = r.json()
+    context = {
+        "msg": "Une erruer",
+        "pays": pays_all
+    }
+    
+    return render_template(FRONTEND_TEMPLATE+'register.html', msg=context)
 
 
 @app.route("/register", methods=['POST'])
