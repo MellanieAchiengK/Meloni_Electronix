@@ -79,4 +79,4 @@ def get_id_city_name(citie_name):
         print(dic['name'])
         if citie_name == dic['name']:
             id = dic['id']
-    return jsonify({"id": id}), 200 
+    return jsonify({"id": str(id)}), 200 

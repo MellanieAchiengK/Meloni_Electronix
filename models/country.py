@@ -12,7 +12,7 @@ class Country(BaseModel, Base):
     __tablename__ = 'countries'
     iso2 = Column(String(2), nullable=True)
     name = Column(String(128), nullable=False)
-    nicename = Column(String(128), nullable=True)
+    nicename = Column(String(128), nullable=False)
     iso3 = Column(String(128), nullable=True)
     numcode = Column(Integer(), nullable=True)
     phonecode = Column(Integer, nullable=True)

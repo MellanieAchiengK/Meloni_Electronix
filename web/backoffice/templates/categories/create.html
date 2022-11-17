@@ -1,0 +1,85 @@
+{% extends "/backoffice/templates/base.html" %}
+{% block title %}Category list{% endblock %}
+
+{% block style %}
+  <style>
+    
+  </style>
+{% endblock %}
+
+{% block preloader %}
+<!-- Preloader -->
+<div class="preloader flex-column justify-content-center align-items-center">
+  <img class="animation__shake" src="{{ url_for('static', filename='/backoffice/static/images/Meloni loader.png') }}"
+    alt="Meloni logo" height="60" width="60">
+</div>
+{% endblock %}
+
+{% block main_content %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Categories</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="/me-admin/products">Home</a></li>
+            <li class="breadcrumb-item active">Add</li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <!-- /.card -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title">Add category</h3>
+          </div>
+          <!-- /.card-header -->
+          <!-- form start -->
+          <form method="POST", action="/me-admin/categories/create">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Name">
+                  </div>
+                  <div class="form-group">
+                    <label for="uploadimage">Image</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" onchange="readURL(this);" class="custom-file-input" name="image" id="uploadimage">
+                        <label class="custom-file-label" for="uploadimage">Choose a file</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group mt-1">
+                    <img id="imageResult" src="#" alt="" style="max-width: 25%;" class="img-fluid shadow-sm d-block">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+              <button type="submit" class="btn btn-lg btn-primary">Save</button>
+            </div>
+          </form>
+        </div>
+        <!-- /.card -->
+      </div>
+    </div>
+<!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+{% endblock %}

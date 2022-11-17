@@ -25,10 +25,21 @@
                 <label for="password"><i class="fas fa-lock"></i></label>
 				<input type="password" name="confirm_password" placeholder="Password" id="confirm_password" required>
 
-                <label for="Contry"><i class=""></i></label>
-				<input type="text" name="contry" placeholder="Contry" id="contry" required>
 
-                <label for="Citie"><i class=""></i></label>
+                <!-- <label for="Contry"><i class=""></i></label>
+				<input type="text" name="contry" placeholder="Contry" id="contry" required> -->
+				
+				<label>Pays</label>
+				<select id="icone" name="icone">
+					{% for p in msg.pays %}
+						{{ p.name }}
+						<option value={{ p.id }}> {{ p.name }}</option>
+					{% endfor %}
+				</select>
+					
+
+
+				<label for="Citie"><i class=""></i></label>
 				<input type="text" name="citie" placeholder="Citie" id="citie" required>
 				
                 
@@ -36,7 +47,9 @@
 					<i class="fas fa-envelope"></i>
 				</label>                
                 <input type="email" name="email" placeholder="Email" id="email" required>
-				<div class="msg">{{ msg }}</div>
+				<div class="msg">
+					
+				</div>
 				<input type="submit" value="Register">
 			</form>
 		</div>

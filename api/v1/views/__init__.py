@@ -11,3 +11,4 @@ from api.v1.views.Article import *
 from api.v1.views.Category import *
 from api.v1.views.Contry import *
 from api.v1.views.Citie import *
+from api.v1.views.User import *

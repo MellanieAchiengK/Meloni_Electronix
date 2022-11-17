@@ -5,53 +5,52 @@ Liste of the produit
 
 from flask import jsonify, request, abort
 from views import app_views
-from models.country import Country
+from models.user import User
 from models import storage
 
 
 @app_views.route(
-    '/country',
+    '/users',
     methods=['GET'],
     strict_slashes=False)
-def contry_all():
-    countries = storage.all(Country).values()
+def users_all():
+    users = storage.all(User).values()
     liste = []
-    for loop in countries:
+    for loop in users:
         liste.append(loop.to_dict())
     return liste, 200
     
 
 @app_views.route(
-    '/country',
+    '/user',
     methods=['POST'],
     strict_slashes=False)
-def createContry():
-    #contries = storage.all(Country)
+def createUser():
     data = request.get_json()
 
     if type(data) is not dict:
         abort(404, "Not a JSON")
     if "name" not in data:
         abort(400, "Missing name")
-    contry = Country(**data)
-    storage.new(contry)
+    user = User(**data)
+    storage.new(user)
     storage.save()
-    return jsonify(contry.to_dict()), 201
+    return jsonify(user.to_dict()), 201
 
 
-@app_views.route('/country/<country_id>',
+@app_views.route('/user/<user_id>',
                  strict_slashes=False, methods=['DELETE'])
-def delCounty(country_id):
-    state = storage.get(Country, country_id)
-    if state is None:
+def delUser(user_id):
+    user = storage.get(User, user_id)
+    if user is None:
         abort(404)
-    storage.delete(state)
+    storage.delete(user)
     storage.save()
     return jsonify({}), 200
 
-@app_views.route('/country/<country_id>',
+@app_views.route('/user/<user_id>',
                  strict_slashes=False, methods=['PUT'])
-def updateContry(country_id):
+def updateUser(user_id):
     data = request.get_json()
 
     if type(data) is not dict:
@@ -59,25 +58,25 @@ def updateContry(country_id):
     if "name" not in data:
         abort(400, "Missing name")
 
-    state = storage.get(Country, country_id)
-    if state is None:
+    user = storage.get(User, user_id)
+    if user is None:
         abort(404)
     black_list = ["id", "created_at", "updated_at"]
     for key, value in data.items():
         if key not in black_list:
-            setattr(state, key, value)
+            setattr(user, key, value)
     storage.save()
-    return jsonify(state.to_dict()), 200
+    return jsonify(user.to_dict()), 200
 
 
-@app_views.route('/country/<country_name>',
+""" @app_views.route('/user/<user_id>',
                  strict_slashes=False, methods=['GET'])
-def get_id_country_name(country_name):
-    countries = storage.all(Country).values()
+def get_id_user_name(citie_name):
+    users = storage.all(User).values()
     id = None
-    for loop in countries:
+    for loop in users:
         dic = loop.to_dict()
         print(dic['name'])
-        if country_name == dic['name']:
+        if citie_name == dic['name']:
             id = dic['id']
-    return jsonify({"id": str(id)}), 200 
+    return jsonify({"id": str(id)}), 200  """

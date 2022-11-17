@@ -7,7 +7,7 @@ from views import app_views
 from flask import Flask, render_template, request, redirect
 from os import getenv
 import requests
-
+from models import storage
 
 
 BACKOFFICE_TEMPLATE = '/backoffice/templates/'
@@ -58,7 +58,18 @@ def page_connexion_post():
 
 @app.route("/register", methods=['GET'])
 def page_regiter_get():
-    return render_template(FRONTEND_TEMPLATE+'register.html', msg='')
+    # recuperer la liste de tous les paysù
+    pays_all = None
+    r = requests.get('http://{}:{}/api/v1/country'.format(
+                     api_host, api_port))
+    if r.status_code == 200:
+        pays_all = r.json()
+    context = {
+        "msg": "Une erruer",
+        "pays": pays_all
+    }
+    
+    return render_template(FRONTEND_TEMPLATE+'register.html', msg=context)
 
 
 @app.route("/register", methods=['POST'])
@@ -69,7 +80,20 @@ def page_regiter_post():
     contry =  request.form['contry']
     citie = request.form['citie']
     email = request.form['email']
-    return "{} {} et {} enrigistré avec succes // {} habite a {} dans {}".format(username, password, email, confirm_password, contry, citie)
+    r = requests.get('http://{}:{}/api/v1/country/{}'.format(
+                     api_host, api_port, contry))
+    id_county = r.json().get("id")
+
+    r = requests.get('http://{}:{}/api/v1/citie/{}'.format(
+                     api_host, api_port, citie))
+    id_citie = r.json().get("id")
+    """ user_all = storage.all('User').values
+    email_existe = False
+    for loop in user_all:
+        if loop.to_dict().get('email') == email:
+            email_existe = True """
+     
+    return id_citie
 
 
 @app.route("/article/<int:pk>")
@@ -93,6 +117,23 @@ def articebycategorie(pk):
 @app.route("/me-admin")
 def dashboard():
     return render_template(BACKOFFICE_TEMPLATE+'dashboard.html')
+
+
+@app.route("/me-admin/products")
+def products_index():
+    return render_template(BACKOFFICE_TEMPLATE+'products/index.html')
+
+
+@app.route("/me-admin/categories")
+def categories_index():
+    return render_template(BACKOFFICE_TEMPLATE+'categories/index.html')
+
+
+@app.route("/me-admin/categories/create", methods=["GET", "POST"])
+def categories_create():
+    if request.method == 'POST':
+        print('request.form')
+    return render_template(BACKOFFICE_TEMPLATE+'categories/create.html')
 
 
 if __name__ == '__main__':
