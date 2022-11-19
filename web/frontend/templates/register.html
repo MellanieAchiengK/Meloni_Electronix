@@ -30,7 +30,7 @@
 				<input type="text" name="contry" placeholder="Contry" id="contry" required> -->
 				
 				<label>Pays</label>
-				<select id="icone" name="icone">
+				<select id="contry" name="contry">
 					{% for p in msg.pays %}
 						{{ p.name }}
 						<option value={{ p.id }}> {{ p.name }}</option>
