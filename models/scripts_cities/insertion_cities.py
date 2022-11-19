@@ -14,14 +14,19 @@ files_countries = [f for f in listdir(PATH_FILE_BY_CONTRIES) if isfile(join(PATH
 
 
 id = 1
+cityDb_all = []
+for loop in storage.all(City).values():
+    cityDb_all.append(loop.to_dict().get("name"))
 
 for country in sorted(files_countries):
-    #print(id,"------------------------------ ",country)
     cities_all = liste_Files(PATH_FILE_BY_CONTRIES + "/" + country)
     if cities_all is not None:
         for cit in cities_all:
-            city = City(name=cit, country_id=id)
-            city.save()
-            print(city.to_dict())
+            if cit not in cityDb_all:
+                city = City(name=cit, country_id=id)
+                city.save()
+                print(city.to_dict())
+            else:
+                print("<{}> already exists".format(cit))
     id += 1
 
