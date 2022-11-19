@@ -8,7 +8,6 @@ from views import app_views
 from models.city import City
 from models import storage
 
-
 @app_views.route(
     '/cities',
     methods=['GET'],
@@ -18,6 +17,20 @@ def city_all():
     liste = []
     for loop in countries:
         liste.append(loop.to_dict())
+    return liste, 200
+
+
+@app_views.route(
+    '/country/<country_id>/cities',
+    methods=['GET'],
+    strict_slashes=False)
+def city_all_by_contrie(country_id):
+    countries = storage.all(City).values()
+    liste = []
+    for loop in countries:
+        #print(type(loop.to_dict().get('country_id')) ," == ", type(country_id))
+        if str(loop.to_dict().get('country_id')) == str(country_id):
+            liste.append(loop.to_dict())
     return liste, 200
     
 

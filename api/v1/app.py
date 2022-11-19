@@ -8,6 +8,9 @@ from flask import Flask, render_template, request, redirect
 from os import getenv
 import requests
 from models import storage
+from models.country import Country
+from models.city import City
+from flask_cors import CORS
 
 
 BACKOFFICE_TEMPLATE = '/backoffice/templates/'
@@ -23,6 +26,7 @@ app = Flask(__name__,
             static_folder='../../web',
             template_folder='../../web')
 app.register_blueprint(app_views)
+CORS(app)
 
 
 
@@ -85,20 +89,10 @@ def page_regiter_post():
     contry =  request.form['contry']
     citie = request.form['citie']
     email = request.form['email']
-    r = requests.get('http://{}:{}/api/v1/country/{}'.format(
-                     api_host, api_port, contry))
-    id_county = r.json().get("id")
 
-    r = requests.get('http://{}:{}/api/v1/citie/{}'.format(
-                     api_host, api_port, citie))
-    id_citie = r.json().get("id")
-    """ user_all = storage.all('User').values
-    email_existe = False
-    for loop in user_all:
-        if loop.to_dict().get('email') == email:
-            email_existe = True """
+    print("contry= {} citie={}".format(contry, citie))
      
-    return id_citie
+    return "contry_id"
 
 
 @app.route("/article/<int:pk>")
