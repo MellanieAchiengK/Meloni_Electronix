@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+export PYTHONPATH="${PYTHONPATH}:$(pwd)"
+
+ME_MYSQL_USER=melani_dev ME_MYSQL_PWD=Mel0ni_dev_123 ME_MYSQL_HOST=localhost ME_MYSQL_DB=ME_db ME_MYSQL_PORT=5000 ./models/scripts_cities/insertion_cities.py 
