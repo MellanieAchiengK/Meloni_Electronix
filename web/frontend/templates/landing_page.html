@@ -16,12 +16,12 @@
     <div class="col-sm col-8 border border-success">
         <nav id="navigation" class="navbar navbar-expand fw-bold justify-content-center">
             {% block navbar %}
-	       <a class="navbar-brand" href="/"><span><br/>Product</span></a>
-               <img class="image1" src="{{ url_for('static', filename='frontend/static/images/dropdown.png) }}"> 
-	       <a class="navbar-brand" href="..."><span><br/>Features</span></a>
-               <img class="image2" src="{{ url_for('static', filename='frontend/static/images/dropdown.png) }}">
-	       <a class="navbar-brand" href="..."><span><br/>Contact</span></a>
-	       <img class="image3" src="{{ url_for('static', filename='frontend/static/images/dropdown.png) }}">
+	       <a class="navbar-brand" href="/"><span>Product</span></a>
+           <img class="image1" src="{{ url_for('static', filename='frontend/static/images/dropdown.png) }}"><br/>
+	       <a class="navbar-brand" href="..."><span>Features</span></a>
+           <img class="image2" src="{{ url_for('static', filename='frontend/static/images/dropdown.png) }}"><br/>
+	       <a class="navbar-brand" href="..."><span>Contact</span></a>
+	       <img class="image3" src="{{ url_for('static', filename='frontend/static/images/dropdown.png) }}"><br/>
 	     {% endblock %}
 	 </nav>
     </div>
@@ -34,8 +34,8 @@
             {% block content %} 
             <nav id="paragraph" class="paragraph-naviagtion">
                  <a class="paragraph1" href="/"><span>Highlight</span><br/></a>
-		 <a class="paragraph2" href="..."><span>Specification</span><br/></a>
-		 <a class="paragraph3" href="..."><span>Compare></span><br/></a>
+		 <a class="paragraph1" href="..."><span>Specification</span><br/></a>
+		 <a class="paragraph1" href="..."><span>Compare></span><br/></a>
 	    </nav>
             {% endblock %}
       <p><span>Iphone 14 Series</span><br/></p>
