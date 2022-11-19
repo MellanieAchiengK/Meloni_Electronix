@@ -1,16 +1,15 @@
 #!/usr/bin/env python3
 import os
 
-os.getcwd()
-PATH_COUNTIRES_FILE = os.getcwd() + '/models/scripts_cities/countries'
 
-listeFile = []
 
-def liste_Files():
-    with open(PATH_COUNTIRES_FILE, "r") as filin:
+def liste_Files(file):
+    listeFile = []
+    with open(file, "r") as filin:
         ligne = filin.readline()
         while ligne != "":
-            listeFile.append(ligne)
+            ligne = ligne[:len(ligne) - 1]
+            listeFile.append(ligne.upper())
             ligne = filin.readline()
-
-    return listeFile
+    filin.close()
+    return sorted(listeFile)

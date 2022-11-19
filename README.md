@@ -19,10 +19,18 @@ cat drop_all_tables_of_current_db.sql | mysql -uroot -p ME_db
 ```
 
 
-Fill countries table
+Fill countries table    
+NB: First make sure you have created all the tables by simply starting the application
 
 ```
 cat countries.sql | mysql -uroot -p ME_db
+```
+
+Now that the country table has been filled in.
+For each country per file in this directory Melonie_Electronix/models/scripts_cities/cities, list the cities, one city per line, and end the file with a line break, 
+then I executed the following command to migrate the data into the database:
+```
+./inserCitueValues 
 ```
 
 Create a environement virtual
