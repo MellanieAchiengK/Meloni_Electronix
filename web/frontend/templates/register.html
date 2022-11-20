@@ -32,7 +32,7 @@
 				<input type="text" name="contry" placeholder="Contry" id="contry" required> -->
 				
 				<label>Pays</label>
-				<select id="contry" name="contry">
+				<select id="contry" name="contry" class="contry">
 					{% for p in msg.pays %}
 						{{ p.name }}
 						<option value={{ p.id }}> {{ p.name }}</option>
@@ -43,7 +43,10 @@
 
 				<label for="Citie"><i class=""></i></label>
 				<select id="citie" name="citie">
-					<option value=""}> City </option>
+					{% for p in msg.first_cities_all %}
+						{{ p.name }}
+						<option value={{ p.id }}> {{ p.name }}</option>
+					{% endfor %}
 				</select>
 
                 

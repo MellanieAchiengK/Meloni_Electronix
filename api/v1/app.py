@@ -73,9 +73,21 @@ def page_regiter_get():
                      api_host, api_port))
     if r.status_code == 200:
         pays_all = r.json()
+        first_country_id = pays_all[0].get('id')
+        r = requests.get('http://{}:{}/api/v1/country/{}/cities'.format(
+                     api_host, api_port, first_country_id))
+        if r.status_code == 200:
+            first_cities_all = r.json()
+            #print(first_cities_all)
+        else:
+            first_cities_all = ""
+    else:
+        pays_all= ""
+    
     context = {
         "msg": "Une erruer",
-        "pays": pays_all
+        "pays": pays_all,
+        "first_cities_all": first_cities_all
     }
     
     return render_template(FRONTEND_TEMPLATE+'register.html', msg=context)
@@ -92,7 +104,7 @@ def page_regiter_post():
 
     print("contry= {} citie={}".format(contry, citie))
      
-    return "contry_id"
+    return "contry_id = {} citie_id= {}".format(contry, citie)
 
 
 @app.route("/article/<int:pk>")
