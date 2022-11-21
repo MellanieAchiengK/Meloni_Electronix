@@ -74,7 +74,6 @@ def page_connexion_post():
 
 @app.route("/register", methods=['GET'])
 def page_regiter_get():
-    # recuperer la liste de tous les paysù
     pays_all = None
     r = requests.get('http://{}:{}/api/v1/country'.format(
                      api_host, api_port))
