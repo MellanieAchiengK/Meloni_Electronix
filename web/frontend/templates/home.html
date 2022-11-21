@@ -8,7 +8,7 @@
     <h1>category for article </h1>
     <div id="categorie" >
         {% for article in categorie %}
-            <a href='/categorie/{{ article.id }}'> <img src={{ article.src }} alt={{ article.title }} title={{ article.title }} /> </a>
+            <a href='/categorie/{{ article.id }}'> <img src={{ article.image }} alt={{ article.name }} title={{ article.name }} /> </a>
             <h2> {{ article.title}} </h2>
         {% endfor %}
     </div>
