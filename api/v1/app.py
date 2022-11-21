@@ -13,7 +13,7 @@ from models.city import City
 from models.user import User
 from flask_cors import CORS
 from hashlib import md5
-#from api.v1.views.lib.hash import get_hashed_password
+from api.v1.views.lib.decorator import Melanie_Electronic_login_required
 
 
 BACKOFFICE_TEMPLATE = '/backoffice/templates/'
@@ -139,6 +139,7 @@ def articebycategorie(pk):
 
 
 @app.route("/me-admin")
+@Melanie_Electronic_login_required
 def dashboard():
     return render_template(BACKOFFICE_TEMPLATE+'dashboard.html')
 

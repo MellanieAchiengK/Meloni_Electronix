@@ -3,9 +3,10 @@
 
 from models.base_model import BaseModel, Base
 import sqlalchemy
-from sqlalchemy import Column, String, Integer, ForeignKey
+from sqlalchemy import Column, String, Integer, ForeignKey, Boolean
 from sqlalchemy.orm import relationship
 from hashlib import md5
+#from flask_login import UserMixin
 
 
 class User(BaseModel, Base):
@@ -21,6 +22,7 @@ class User(BaseModel, Base):
     adresses = relationship("Address", backref="address")
     orders = relationship("Order", backref="user")
     payements = relationship("Payement", backref="user")
+    authentification = Column(Boolean, default=False)
 
     def __init__(self, *args, **kwargs):
         """initializes user"""
