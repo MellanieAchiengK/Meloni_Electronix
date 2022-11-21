@@ -66,11 +66,20 @@ $(document).ready(function(){
 
     $('#email').change(function() {
       email = $('#email').val()
-      let userexiste = false
-      if(((pass1 == pass2) && (pass1 !='')) && userexiste == false){
-        console.log("condition verifier")
-        $('input:submit').prop('disabled', false);
+      if((pass1 == pass2) && (pass1 !='')){
+        const url = localhost + '/api/v1/user_registered/' + email + '/' + pass1;
+        let user_register = false
+        $.get(url, function (data) {
+          console.log(data)
+          user_register = data.rep
+          if (user_register == false){
+            console.log(user_register)
+            $('input:submit').prop('disabled', false);
+            console.log(email," ", pass1, "tout est ok")
+          }
+          else
+            $("#email").css("background-color", "red");
+        }); 
       }
-      console.log(email)
     })
 });

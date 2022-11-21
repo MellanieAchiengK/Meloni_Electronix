@@ -108,9 +108,12 @@ def page_regiter_post():
     
     user = User(first_name=first_name, last_name=last_name,
                 password=password, city_id=citie_id, email=email)
-     
-    return "{} pass {}".format(user.to_dict(), user.password)
-
+    user.save()
+    return redirect('/succes')
+    
+@app.route("/succes")
+def succes_page():
+    return render_template(FRONTEND_TEMPLATE+'success-page.html')
 
 @app.route("/article/<int:pk>")
 def get_article(pk):
