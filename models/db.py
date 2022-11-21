@@ -64,7 +64,7 @@ class Db:
         return (new_dict)
     
     def get_id(self, cls=None, motif=None):
-        print("motif rechercher: {}".format(motif))
+        #print("motif rechercher: {}".format(motif))
         dic = self.all(cls).values()
         liste = []
         for loop in dic:

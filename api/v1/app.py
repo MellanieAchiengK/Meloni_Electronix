@@ -10,7 +10,9 @@ import requests
 from models import storage
 from models.country import Country
 from models.city import City
+from models.user import User
 from flask_cors import CORS
+#from api.v1.views.lib.hash import get_hashed_password
 
 
 BACKOFFICE_TEMPLATE = '/backoffice/templates/'
@@ -85,7 +87,7 @@ def page_regiter_get():
         pays_all= ""
     
     context = {
-        "msg": "Une erruer",
+        "msg": "",
         "pays": pays_all,
         "first_cities_all": first_cities_all
     }
@@ -95,16 +97,19 @@ def page_regiter_get():
 
 @app.route("/register", methods=['POST'])
 def page_regiter_post():
-    username = request.form['username']
+    first_name = request.form['first_name']
+    last_name = request.form['last_name']
     password = request.form['password']
     confirm_password = request.form['confirm_password']
-    contry =  request.form['contry']
-    citie = request.form['citie']
+    contry_id =  request.form['contry']
+    citie_id = request.form['citie']
     email = request.form['email']
 
-    print("contry= {} citie={}".format(contry, citie))
+    
+    user = User(first_name=first_name, last_name=last_name,
+                password=password, city_id=citie_id, email=email)
      
-    return "contry_id = {} citie_id= {}".format(contry, citie)
+    return "{} pass {}".format(user.to_dict(), user.password)
 
 
 @app.route("/article/<int:pk>")
