@@ -82,9 +82,9 @@ def get_id_user_name(citie_name):
             id = dic['id']
     return jsonify({"id": str(id)}), 200  """
 
-@app_views.route('/user_registered/<user_email>/<user_password>',
+@app_views.route('/user_registered/<user_email>',
                  strict_slashes=False, methods=['GET'])
-def user_registered(user_email, user_password):
+def user_registered(user_email):
     rep = False
     user_all = storage.all(User).values()
     user_list = []
@@ -92,9 +92,11 @@ def user_registered(user_email, user_password):
     
     for loop in user_all:
         user_list.append((loop.to_dict().get('email')))
+        if loop.to_dict().get('email') == user_email:
+            user = loop.to_dict()
     
     
     if user_email in user_list:
-        return jsonify({"rep":True}), 200
+        return jsonify({"rep":True, "user": user}), 200
 
-    return jsonify({"rep":False}), 200 
+    return jsonify({"rep":False, "user": user}), 200 

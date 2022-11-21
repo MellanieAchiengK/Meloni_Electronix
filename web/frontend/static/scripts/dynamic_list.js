@@ -67,7 +67,7 @@ $(document).ready(function(){
     $('#email').change(function() {
       email = $('#email').val()
       if((pass1 == pass2) && (pass1 !='')){
-        const url = localhost + '/api/v1/user_registered/' + email + '/' + pass1;
+        const url = localhost + '/api/v1/user_registered/' + email;
         let user_register = false
         $.get(url, function (data) {
           console.log(data)

@@ -12,6 +12,7 @@ from models.country import Country
 from models.city import City
 from models.user import User
 from flask_cors import CORS
+from hashlib import md5
 #from api.v1.views.lib.hash import get_hashed_password
 
 
@@ -59,12 +60,16 @@ def page_connexion_get():
 @app.route("/login", methods=['POST'])
 def page_connexion_post():
     msg = 'erreur'
-    verite = True
-    username = request.form['username']
+    email = request.form['email']
     password = request.form['password']
-    if verite:
+    
+    r = requests.get('http://{}:{}/api/v1/user_registered/{}'.format(
+                     api_host, api_port, email))
+    user_db = r.json()
+
+    if user_db.get("rep") and user_db.get("user").get("password") == md5(password.encode()).hexdigest():
         return   redirect('/')
-    return render_template(FRONTEND_TEMPLATE+'connexion.html', msg='')
+    return redirect('/login')
 
 
 @app.route("/register", methods=['GET'])
