@@ -28,7 +28,7 @@ def city_all_by_contrie(country_id):
     countries = storage.all(City).values()
     liste = []
     for loop in countries:
-        #print(type(loop.to_dict().get('country_id')) ," == ", type(country_id))
+        # print(type(loop.to_dict().get('country_id')) ," == ", type(country_id))
         if str(loop.to_dict().get('country_id')) == str(country_id):
             liste.append(loop.to_dict())
     return liste, 200
