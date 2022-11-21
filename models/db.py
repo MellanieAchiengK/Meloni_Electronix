@@ -3,6 +3,7 @@
 Contains the class Db
 """
 
+import models
 from models.base_model import BaseModel, Base
 from models.address import Address
 from models.category import Category
@@ -62,6 +63,18 @@ class Db:
                     key = str(obj.__class__.__name__) + '.' + str(obj.id)
                     new_dict[key] = obj
         return (new_dict)
+    
+    def get_id(self, cls=None, motif=None):
+        print("motif rechercher: {}".format(motif))
+        dic = self.all(cls).values()
+        liste = []
+        for loop in dic:
+            liste.append((loop.to_dict().get('id'), loop.to_dict().get('name')))
+        
+        for loop in liste:
+            if loop[1] == motif:
+                return loop
+        return None
 
     def new(self, obj):
         """add the object to the current database session"""
@@ -90,3 +103,14 @@ class Db:
     def close(self):
         """call remove() method on the private session attribute"""
         self.__session.remove()
+
+    def count(self, cls=None):
+        """
+        count the number of objects in storage
+        """
+        if not cls:
+            count = 0
+        else:
+            count = len(models.storage.all(cls).values())
+
+        return count

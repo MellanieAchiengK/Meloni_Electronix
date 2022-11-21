@@ -7,7 +7,7 @@ from sqlalchemy import Column, String, ForeignKey, Integer
 from sqlalchemy.orm import relationship
 
 
-class Country(Base):
+class Country(BaseModel, Base):
     """Representation of Country """
     __tablename__ = 'countries'
     id = Column(Integer, primary_key=True)

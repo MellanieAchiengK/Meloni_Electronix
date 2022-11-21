@@ -1,0 +1,104 @@
+{'name': 'ANDKHOI\t', 'country_id': 1, 'created_at': '2022-11-20T08:44:28.884536', 'updated_at': '2022-11-20T08:44:28.884545', 'id': 147, '__class__': 'City'}
+{'name': 'AQCHAH', 'country_id': 1, 'created_at': '2022-11-20T08:44:28.956524', 'updated_at': '2022-11-20T08:44:28.956545', 'id': 148, '__class__': 'City'}
+{'name': 'ASADABAD', 'country_id': 1, 'created_at': '2022-11-20T08:44:29.071356', 'updated_at': '2022-11-20T08:44:29.071401', 'id': 149, '__class__': 'City'}
+{'name': 'AYBAK', 'country_id': 1, 'created_at': '2022-11-20T08:44:29.175290', 'updated_at': '2022-11-20T08:44:29.175341', 'id': 150, '__class__': 'City'}
+{'name': 'BAGLAN', 'country_id': 1, 'created_at': '2022-11-20T08:44:30.070376', 'updated_at': '2022-11-20T08:44:30.070428', 'id': 151, '__class__': 'City'}
+{'name': 'BALKH', 'country_id': 1, 'created_at': '2022-11-20T08:44:30.150013', 'updated_at': '2022-11-20T08:44:30.150062', 'id': 152, '__class__': 'City'}
+{'name': 'BAMIYAN\t', 'country_id': 1, 'created_at': '2022-11-20T08:44:30.254047', 'updated_at': '2022-11-20T08:44:30.254098', 'id': 153, '__class__': 'City'}
+{'name': 'CHAHAB', 'country_id': 1, 'created_at': '2022-11-20T08:44:30.357123', 'updated_at': '2022-11-20T08:44:30.357174', 'id': 154, '__class__': 'City'}
+{'name': 'CHARIKAR', 'country_id': 1, 'created_at': '2022-11-20T08:44:30.460569', 'updated_at': '2022-11-20T08:44:30.460619', 'id': 155, '__class__': 'City'}
+{'name': 'EMAM SAHEB', 'country_id': 1, 'created_at': '2022-11-20T08:44:30.563681', 'updated_at': '2022-11-20T08:44:30.563732', 'id': 156, '__class__': 'City'}
+{'name': 'FARÂH', 'country_id': 1, 'created_at': '2022-11-20T08:44:30.723084', 'updated_at': '2022-11-20T08:44:30.723134', 'id': 157, '__class__': 'City'}
+{'name': 'FAÏZÂBÂD', 'country_id': 1, 'created_at': '2022-11-20T08:44:30.886655', 'updated_at': '2022-11-20T08:44:30.886706', 'id': 158, '__class__': 'City'}
+{'name': 'GARDEZ', 'country_id': 1, 'created_at': '2022-11-20T08:44:31.084396', 'updated_at': '2022-11-20T08:44:31.084441', 'id': 159, '__class__': 'City'}
+{'name': 'GHAZNI', 'country_id': 1, 'created_at': '2022-11-20T08:44:31.177895', 'updated_at': '2022-11-20T08:44:31.177946', 'id': 160, '__class__': 'City'}
+{'name': 'GURIAN', 'country_id': 1, 'created_at': '2022-11-20T08:44:32.187300', 'updated_at': '2022-11-20T08:44:32.187362', 'id': 161, '__class__': 'City'}
+{'name': 'HÉRAT', 'country_id': 1, 'created_at': '2022-11-20T08:44:32.327556', 'updated_at': '2022-11-20T08:44:32.327612', 'id': 162, '__class__': 'City'}
+{'name': 'JALALABAD', 'country_id': 1, 'created_at': '2022-11-20T08:44:32.421682', 'updated_at': '2022-11-20T08:44:32.421733', 'id': 163, '__class__': 'City'}
+{'name': 'KABOUL', 'country_id': 1, 'created_at': '2022-11-20T08:44:32.515527', 'updated_at': '2022-11-20T08:44:32.515578', 'id': 164, '__class__': 'City'}
+{'name': 'KANDAHÂR', 'country_id': 1, 'created_at': '2022-11-20T08:44:32.608738', 'updated_at': '2022-11-20T08:44:32.608790', 'id': 165, '__class__': 'City'}
+{'name': 'KHAN ABAD', 'country_id': 1, 'created_at': '2022-11-20T08:44:32.702443', 'updated_at': '2022-11-20T08:44:32.702530', 'id': 166, '__class__': 'City'}
+{'name': 'KHOST', 'country_id': 1, 'created_at': '2022-11-20T08:44:32.842674', 'updated_at': '2022-11-20T08:44:32.842727', 'id': 167, '__class__': 'City'}
+{'name': 'KHULM', 'country_id': 1, 'created_at': '2022-11-20T08:44:32.937107', 'updated_at': '2022-11-20T08:44:32.937157', 'id': 168, '__class__': 'City'}
+{'name': 'KONDÔZ', 'country_id': 1, 'created_at': '2022-11-20T08:44:33.077165', 'updated_at': '2022-11-20T08:44:33.077218', 'id': 169, '__class__': 'City'}
+{'name': 'KUSHK', 'country_id': 1, 'created_at': '2022-11-20T08:44:33.170826', 'updated_at': '2022-11-20T08:44:33.170879', 'id': 170, '__class__': 'City'}
+{'name': 'LASHKAR GAH', 'country_id': 1, 'created_at': '2022-11-20T08:44:33.310943', 'updated_at': '2022-11-20T08:44:33.311016', 'id': 171, '__class__': 'City'}
+{'name': 'MAIMANA', 'country_id': 1, 'created_at': '2022-11-20T08:44:33.452533', 'updated_at': '2022-11-20T08:44:33.452585', 'id': 172, '__class__': 'City'}
+{'name': 'MAZAR-E-CHARIF', 'country_id': 1, 'created_at': '2022-11-20T08:44:33.592539', 'updated_at': '2022-11-20T08:44:33.592592', 'id': 173, '__class__': 'City'}
+{'name': 'PAGHMAN', 'country_id': 1, 'created_at': '2022-11-20T08:44:34.068849', 'updated_at': '2022-11-20T08:44:34.068910', 'id': 174, '__class__': 'City'}
+{'name': 'POL-E KHOMRI', 'country_id': 1, 'created_at': '2022-11-20T08:44:34.695136', 'updated_at': '2022-11-20T08:44:34.695196', 'id': 175, '__class__': 'City'}
+{'name': 'QALA-I-NAW', 'country_id': 1, 'created_at': '2022-11-20T08:44:34.941559', 'updated_at': '2022-11-20T08:44:34.941613', 'id': 176, '__class__': 'City'}
+{'name': 'QALEH-YE ZAL', 'country_id': 1, 'created_at': '2022-11-20T08:44:35.119928', 'updated_at': '2022-11-20T08:44:35.119988', 'id': 177, '__class__': 'City'}
+{'name': 'RUSTAQ', 'country_id': 1, 'created_at': '2022-11-20T08:44:35.237879', 'updated_at': '2022-11-20T08:44:35.237930', 'id': 178, '__class__': 'City'}
+{'name': 'SANG CHARAK', 'country_id': 1, 'created_at': '2022-11-20T08:44:35.415844', 'updated_at': '2022-11-20T08:44:35.415895', 'id': 179, '__class__': 'City'}
+{'name': 'SAR-É POL', 'country_id': 1, 'created_at': '2022-11-20T08:44:35.593874', 'updated_at': '2022-11-20T08:44:35.593934', 'id': 180, '__class__': 'City'}
+{'name': 'SHEBERGHAN', 'country_id': 1, 'created_at': '2022-11-20T08:44:35.723033', 'updated_at': '2022-11-20T08:44:35.723085', 'id': 181, '__class__': 'City'}
+{'name': 'TALOQAN', 'country_id': 1, 'created_at': '2022-11-20T08:44:35.841411', 'updated_at': '2022-11-20T08:44:35.841494', 'id': 182, '__class__': 'City'}
+{'name': 'ZARANDJ', 'country_id': 1, 'created_at': '2022-11-20T08:44:36.311895', 'updated_at': '2022-11-20T08:44:36.311954', 'id': 183, '__class__': 'City'}
+<ABALA> already exists
+<ABALAK> already exists
+<ADERBISSINAT> already exists
+<AGUIE> already exists
+<ARLIT> already exists
+<AYEROU> already exists
+<BAGAROUA> already exists
+<BALLEYARA> already exists
+<BANIBANGOU> already exists
+<BANKILARE> already exists
+<BELBEDJI> already exists
+<BERMO> already exists
+<BILMA> already exists
+<BIRNI N'KONNI> already exists
+<BOBOYE> already exists
+<BOSSO> already exists
+<BOUZA> already exists
+<DAKORO> already exists
+<DAMAGARAM TAKAYA> already exists
+<DIFFA> already exists
+<DIOUNDIOU> already exists
+<DOGONDOUTCHI> already exists
+<DOSSO> already exists
+<DUNGASS> already exists
+<FALMEY> already exists
+<FILINGUE> already exists
+<GAYA> already exists
+<GAZAOUA> already exists
+<GOTHEYE> already exists
+<GOUDOUMARIA> already exists
+<GOURE> already exists
+<GUIDAN-ROUMDJI> already exists
+<IFEROUANE> already exists
+<ILLELA> already exists
+<INGALL> already exists
+<KANTCHE> already exists
+<KEITA> already exists
+<KOLLO> already exists
+<LOGA> already exists
+<MADAOUA> already exists
+<MADAROUNFA> already exists
+<MAGARIA> already exists
+<MAINE-SOROA> already exists
+<MALBAZA> already exists
+<MARADI> already exists
+<MAYAHI> already exists
+<MIRRIAH> already exists
+<N'GOURTI> already exists
+<N'GUIGMI> already exists
+<NIAMEY> already exists
+<OUALLAM> already exists
+<SAY> already exists
+<TAHOUA> already exists
+<TAHOUA> already exists
+<TAKEITA> already exists
+<TANOUT> already exists
+<TASSARA> already exists
+<TCHINTABARADEN> already exists
+<TCHIROZERINE> already exists
+<TERA> already exists
+<TESKER> already exists
+<TESSAOUA> already exists
+<TIBIRI (DOUTCHI)> already exists
+<TILLABERI> already exists
+<TILLIA> already exists
+<TORODI> already exists
+<ZINDER> already exists
