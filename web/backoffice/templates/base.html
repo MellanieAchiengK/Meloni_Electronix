@@ -195,7 +195,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="/me-admin" class="nav-link active">
+            <a href="/me-admin" class="nav-link {% if request.path == '/me-admin' %} active {% endif %}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -203,7 +203,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/me-admin/products" class="nav-link">
+            <a href="/me-admin/products" class="nav-link {% if '/me-admin/products' in request.path %} active {% endif %}">
               <i class="nav-icon fa fa-database"></i>
               <p>
                 Products
@@ -211,7 +211,8 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/me-admin/orders" class="nav-link">
+            <a href="/me-admin/orders" 
+              class="nav-link {% if '/me-admin/orders' in request.path %} active {% endif %}">
               <i class="nav-icon fa fa-shopping-cart"></i>
               <p>
                 Orders
@@ -219,7 +220,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/me-admin/users" class="nav-link">
+            <a href="/me-admin/users" class="nav-link {% if '/me-admin/users' in request.path %} active {% endif %}">
               <i class="nav-icon fa fa-users"></i>
               <p>
                 Customers
@@ -227,7 +228,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/me-admin/categories" class="nav-link">
+            <a href="/me-admin/categories" class="nav-link {% if '/me-admin/categories' in request.path %} active {% endif %}">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Categories
@@ -235,7 +236,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/me-admin/paramater" class="nav-link">
+            <a href="/me-admin/paramater" class="nav-link {% if '/me-admin/paramater' in request.path %} active {% endif %}">
               <i class="nav-icon fa fa-cog"></i>
               <p>
                 Parameters

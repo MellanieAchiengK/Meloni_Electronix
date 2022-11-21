@@ -4,10 +4,13 @@ Melonie_Electronix implementation
 """
 
 from views import app_views
-from flask import Flask, render_template, request, redirect
-from os import getenv
+from flask import Flask, render_template, request, redirect, flash, url_for
+from os import getenv, path
 import requests
+from werkzeug.utils import secure_filename
 from models import storage
+from models.category import Category
+from models.product import Product
 from models.country import Country
 from models.city import City
 from models.user import User
@@ -20,6 +23,9 @@ BACKOFFICE_TEMPLATE = '/backoffice/templates/'
 BACKOFFICE_STATIC = '/backoffice/static/'
 FRONTEND_TEMPLATE = '/frontend/templates/'
 FRONTEND_STATIC = '/frontend/static/'
+UPLOADS_PATH = 'web'+BACKOFFICE_STATIC+'uploads/'
+# Allowed image extensions
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
 api_host = getenv('ME_MYSQL_HOST', default='0.0.0.0')
 api_port = getenv('ME_MYSQL_PORT', default=5000)
@@ -29,8 +35,8 @@ app = Flask(__name__,
             static_folder='../../web',
             template_folder='../../web')
 app.register_blueprint(app_views)
+app.config['SECRET_KEY'] = 'tmz5d7kioaayiWmW7-zM8g'
 CORS(app)
-
 
 
 @app.route("/")
@@ -85,18 +91,18 @@ def page_regiter_get():
                      api_host, api_port, first_country_id))
         if r.status_code == 200:
             first_cities_all = r.json()
-            #print(first_cities_all)
+            # print(first_cities_all)
         else:
             first_cities_all = ""
     else:
-        pays_all= ""
-    
+        pays_all = ""
+
     context = {
         "msg": "",
         "pays": pays_all,
         "first_cities_all": first_cities_all
     }
-    
+
     return render_template(FRONTEND_TEMPLATE+'register.html', msg=context)
 
 
@@ -140,24 +146,97 @@ def articebycategorie(pk):
 
 @app.route("/me-admin")
 def dashboard():
-    return render_template(BACKOFFICE_TEMPLATE+'dashboard.html')
+    """Returns admin dashboard"""
+    product_count = storage.count(Product)
+    category_count = storage.count(Category)
+    return render_template(BACKOFFICE_TEMPLATE+'dashboard.html',
+                           product_count=product_count,
+                           category_count=category_count)
 
 
 @app.route("/me-admin/products")
-def products_index():
-    return render_template(BACKOFFICE_TEMPLATE+'products/index.html')
+def product_index():
+    """Returns product list"""
+    products = storage.all(Product).values()
+    return render_template(BACKOFFICE_TEMPLATE+'products/index.html',
+                           products=products)
+
+
+@app.route("/me-admin/products/create", methods=["GET", "POST"])
+def product_create():
+    """Returns create product page or creates a product"""
+    if request.method == 'POST':
+        if 'image' not in request.files:
+            flash('No file part')
+            return redirect(request.url)
+        file = request.files['image']
+        if file.filename == '':
+            flash('No image selected for uploading')
+            return redirect(request.url)
+        if file and file.filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS:
+            filename = secure_filename(file.filename)
+            image_path = path.join(BACKOFFICE_STATIC,
+                                   'uploads/product', filename)
+            file.save(path.join(UPLOADS_PATH, 'product', filename))
+            name = request.form.get('name')
+            category_id = request.form.get('category')
+            cost_price = request.form.get('cost_price')
+            selling_price = request.form.get('selling_price')
+            quantity = request.form.get('quantity')
+            descr = request.form.get('description')
+            user_id = 1
+            product = Product(name=name,
+                              selling_price=selling_price,
+                              cost_price=cost_price,
+                              description=descr,
+                              quantity=quantity,
+                              category_id=category_id,
+                              user_id=user_id,
+                              image=image_path)
+            product.save()
+            flash('Product saved succesfully')
+            return redirect(url_for('product_index'))
+        else:
+            flash('Allowed image types are: png, jpg, jpeg, gif')
+    else:
+        categories = sorted(list(storage.all(Category).values()),
+                            key=lambda x: x.name)
+        return render_template(BACKOFFICE_TEMPLATE+'products/create.html',
+                               categories=categories)
 
 
 @app.route("/me-admin/categories")
-def categories_index():
-    return render_template(BACKOFFICE_TEMPLATE+'categories/index.html')
+def category_index():
+    """display table with the categories listed in alphabetical order"""
+    categories = storage.all(Category).values()
+    return render_template(BACKOFFICE_TEMPLATE+'categories/index.html',
+                           categories=categories)
 
 
 @app.route("/me-admin/categories/create", methods=["GET", "POST"])
-def categories_create():
+def category_create():
     if request.method == 'POST':
-        print('request.form')
-    return render_template(BACKOFFICE_TEMPLATE+'categories/create.html')
+        if 'image' not in request.files:
+            flash('No file part')
+            return redirect(request.url)
+        file = request.files['image']
+        if file.filename == '':
+            flash('No image selected for uploading')
+            return redirect(request.url)
+        if file and file.filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS:
+            filename = secure_filename(file.filename)
+            image_path = path.join(BACKOFFICE_STATIC,
+                                   'uploads/category', filename)
+            file.save(path.join(UPLOADS_PATH, 'category', filename))
+            name = request.form.get('name')
+            category = Category(name=name, image=image_path)
+            category.save()
+            flash('Category saved succesfully')
+            return redirect(url_for('category_index'))
+        else:
+            flash('Allowed image types are: png, jpg, jpeg, gif')
+    else:
+        return render_template(BACKOFFICE_TEMPLATE+'categories/create.html')
 
 
 if __name__ == '__main__':
