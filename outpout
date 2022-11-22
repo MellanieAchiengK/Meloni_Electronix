@@ -102,3 +102,7 @@
 <TILLIA> already exists
 <TORODI> already exists
 <ZINDER> already exists
+    <!-- Traceback (most recent call last):
+    File "./api/v1/app.py", line 19, in <module>
+      from api.v1.views.lib.decorator import Melanie_Electronic_login_required
+  ModuleNotFoundError: No module named 'api.v1.views.lib' -->
