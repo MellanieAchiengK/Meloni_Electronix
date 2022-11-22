@@ -7,7 +7,7 @@
 {% block content %}
     <h1>Detail for article </h1>
     <div id="article" >
-        <a href='/article/{{ article.id }}'> <img src={{ article.src }} alt={{ article.title }} title={{ article.title }} /> </a>
+        <a href='/article/{{ article.id }}'> <img src={{ article.image }} alt={{ article.name }} title={{ article.name }}  style="width:400px;height:300px"/> </a>
             <h2> {{ article.title}} </h2>
             <h2>Description</h2>
             {{ article.description}}

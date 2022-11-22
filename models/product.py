@@ -10,6 +10,7 @@ class Product(BaseModel, Base):
     """Representation of Product """
     __tablename__ = 'products'
     name = Column(String(128), nullable=False)
+    image = Column(String(128), nullable=True)
     selling_price = Column(Numeric(10, 2), nullable=False, default=0)
     cost_price = Column(Numeric(10, 2), nullable=False, default=0)
     description = Column(String(1024), nullable=True)

@@ -5,7 +5,7 @@
     <h1>Liste article of categorie </h1>
     <div id="store" >
         {% for article in listecategorie %}
-            <a href='/article/{{ article.id }}'> <img src={{ article.src }} alt={{ article.title }} title={{ article.title }} /> </a>
+            <a href='/article/{{ article.id }}'> <img src={{ article.image }} alt={{ article.name }} title={{ article.name }}  style="width:400px;height:300px"/> </a>
             <h2> {{ article.title}} </h2>
         {% endfor %}
     </div>
