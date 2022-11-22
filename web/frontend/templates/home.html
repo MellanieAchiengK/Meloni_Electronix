@@ -6,9 +6,9 @@
 
 {% block content %}
     <h1>category for article </h1>
-    <div id="categorie" >
+    <div id="categorie" class="d-flex p-2 bd-highlight">
         {% for article in categorie %}
-            <a href='/categorie/{{ article.id }}'> <img src={{ article.image }} alt={{ article.name }} title={{ article.name }} /> </a>
+            <a href='/categorie/{{ article.id }}'> <img src={{ article.image }} alt={{ article.name }} title={{ article.name }} style="width:300px;height:300px;" /> </a>
             <h2> {{ article.title}} </h2>
         {% endfor %}
     </div>

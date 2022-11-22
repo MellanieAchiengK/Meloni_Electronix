@@ -5,6 +5,8 @@ Liste of the produit
 
 from flask import jsonify
 from views import app_views
+from models import storage
+from models.product import Product
 
 article1={
     "title":"Ordinateur",
@@ -31,5 +33,5 @@ def article_all():
     '/article/<int:pk>',
     strict_slashes=False)
 def get_article(pk):
-    
+    print("hello article")
     return jsonify({'article':article1})
