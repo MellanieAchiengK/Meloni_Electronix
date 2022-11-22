@@ -38,12 +38,14 @@ button {
     font-size: 12pt;
     font-family: Montserrat SemiBold;
     color:#ffffff;
+}
 #image4 {
     position: absolute;
     top: 0.96in;
     left: 12.28in;
     width: 0.36in;
     height:0.36in;
+}
 p {
    position: absolute;
    top: 2.75in;
@@ -109,6 +111,7 @@ p {
    left: 6.40in;
    width: 7.53in;
    height:5.01in;
+}
 #image8 {
    position: absolute;
    top: 4.11in;
