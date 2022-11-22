@@ -1,9 +1,61 @@
 {% extends "/frontend/templates/base.html" %}
-{% block title %}Hello{% endblock %}
+{% block title %}Welcome{% endblock %}
 {% block head %}
- Landing page
+      <link rel="stylesheet" href="{{url_for('static', filename='frontend/static/styles/landing_page.css') }}">
+      <title>{% block title %} {% endblock %}</title>   
 {% endblock %}
 {% block content %}
-    Wexlome to Melonie electronique Landing page
+
+    <div class="container-fluid m-2 h-25" >
+        <div class="row">
+            <div class="col-sm border border-secondary">
+                <img src="{{ url_for('static', filename='frontend/static/images/logo.png') }}" alt="Meloni Electronix" title="Meloni Electronix" class="rounded-circle w-100 p-3"/>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm col-8 border border-success">
+        <nav id="navigation" class="navbar navbar-expand fw-bold justify-content-center">
+            {% block navbar %}
+	       <a class="navbar-brand" href="/"><span>Product</span></a>
+           <img class="image1" src="{{ url_for('static', filename='frontend/static/images/dropdown.png) }}"><br/>
+	       <a class="navbar-brand" href="..."><span>Features</span></a>
+           <img class="image2" src="{{ url_for('static', filename='frontend/static/images/dropdown.png) }}"><br/>
+	       <a class="navbar-brand" href="..."><span>Contact</span></a>
+	       <img class="image3" src="{{ url_for('static', filename='frontend/static/images/dropdown.png) }}"><br/>
+	     {% endblock %}
+	 </nav>
+    </div>
+    <div class="col-sm border border-warning">
+         <button type="button">Sign Up</button>
+         <img class="image4" src="{{ url_for('static', filename='frontend/static/images/user.png) }}">
+    </div>
+
+    <div class="container border border-success">
+            {% block content %} 
+            <nav id="paragraph" class="paragraph-naviagtion">
+                 <a class="paragraph1" href="/"><span>Highlight</span><br/></a>
+		 <a class="paragraph1" href="..."><span>Specification</span><br/></a>
+		 <a class="paragraph1" href="..."><span>Compare></span><br/></a>
+	    </nav>
+            {% endblock %}
+      <p><span>Iphone 14 Series</span><br/></p>
+      <p id="paragraph2"><span>LATEST ARRIVALS</span><br/></p>
+      <p id="paragraph3">
+        <span>Quality and elegance are our</span>
+        <br/>
+        <span>top priorities at affordable</span>
+        <br/>
+        <span>prices.</span>
+        <br/>
+    </div>
+    <div class="btn_buy">
+        <button type="button">BUY NOW</button>
+      </div>
+      <img class="image5" src="{{url_for('static', filename='frontend/static/images/nav_left.png) }}">
+      <img class="image6" src="{{ url_for('static',filename='frontend/static/images/circle.png) }}">
+      <img class="image7" src="{{ url_for('static', filename='frontend/static/images/iphone14.png) }}">
+      <img class="image8" src="{{url_for('static', filename='frontend/static/images/nav_right.png) }}">
+      <img class="image9" src="{{url_for('static', filename='frontend/static/images/arrow.png) }}">
+            {% endblock %}
+    </div>
 {% endblock %}
-hello

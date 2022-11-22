@@ -1,0 +1,125 @@
+.html body {
+   font-style: normal;
+   font-size: 13pt;
+   font-family: Montserrat SemiBold;
+   color:#231f20;
+}
+#image1 {
+   position: absolute;
+   top: 1.11in;
+   left: 5.57in;
+   width:0.14in;
+   height:0.08in
+}
+#image2 {
+   position:absolute;
+   top:1.11in;
+   left:7.21in;
+   width:0.14in;
+   height:0.08in
+}
+#image3 {
+   position: absolute;
+   top: 1.11in;
+   left: 8.80in;
+   width: 0.14in;
+   height: 0.08in;
+}
+button {
+    background-color: #773ac7;
+    position: absolute;
+    top: 0.92in;
+    left: 12.22in;
+    width: 1.42in;
+    height: 0.45in;
+    text-align: right; 
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12pt;
+    font-family: Montserrat SemiBold;
+    color:#ffffff;
+#image4 {
+    position: absolute;
+    top: 0.96in;
+    left: 12.28in;
+    width: 0.36in;
+    height:0.36in;
+p {
+   position: absolute;
+   top: 2.75in;
+   left: 1.80in;
+   width: 2.39in;
+   line-height:0.37in;
+   font-weight: bold;
+   font-size: 18pt;
+   color:#000000;
+}
+#paragraph2 {
+   position: absolute;
+   top: 3.58in;
+   left: 1.78in;
+   width: 4.38in;
+   line-height: 0.60in;
+   font-weight: bold;
+   font-size: 29pt;
+   font-family: Montserrat ExtraBold;
+   color:#000000;
+}
+#paragraph3 {
+   font-weight: normal;
+   font-size: 21pt;
+   font-family: Montserrat;
+   color:#000000;
+   position: absolute;
+   top: 4.34in;
+   left: 1.80in;
+   width: 4.75in;
+   line-height: 0.44in;
+}
+.btn-buy {
+   background-color: #773ac7;
+   position: absolute;
+   top: 6.97in;
+   left: 2.08in;
+   width: 1.58in;
+   line-height:0.38in;
+   font-style: normal;
+   font-weight: bold;
+   font-size: 18pt;
+   font-family: Montserrat SemiBold;
+   color:#ffffff;
+}
+#image5 {
+   position: absolute;
+   top: 4.11in;
+   left: 0.61in;
+   width: 0.53in;
+   height: 0.88in;
+}
+#image6 {
+   position: absolute;
+   top: 2.11in;
+   left: 7.29in;
+   width: 5.76in;
+   height: 5.76in;
+}
+#image7 {
+   position: absolute;
+   top: 2.48in;
+   left: 6.40in;
+   width: 7.53in;
+   height:5.01in;
+#image8 {
+   position: absolute;
+   top: 4.11in;
+   left: 13.37in;
+   width: 0.53in;
+   height:0.88in;
+}
+#image9 {
+   position: absolute;
+   top: 7.12in;
+   left: 4.15in;
+   width: 0.71in;
+   height:0.05in;
+}
