@@ -8,7 +8,20 @@
 {% endblock %}
 
 {% block content %}
-    <h1>category for article </h1>
+<div class="text-container"><span id="t1" class="t s1">Home </span><span id="t2" class="t s1">All Products </span><span id="t3" class="t s1">Samsung </span><span id="t4" class="t s1">Apple </span><span id="t5" class="t s1">OnePlus </span><span id="t6" class="t s1">OPPO </span><span id="t7" class="t s1">Nokia </span>
+    <span id="t8" class="t s1">Accessories </span>
+    <span id="t9" class="t s2">Explore our Deals </span>
+    <span id="ta" class="t s3">search </span>
+    <span id="tb" class="t s4">@melonielectronix </span><span id="tc_4" class="t s2_4">@melonielectronix </span>
+    <span id="td" class="t s2">0712345678 </span>
+    <span id="te" class="t s2">0712345678 </span>
+    <span id="tf" class="t s2">melonielectronix@gmail.com </span>
+    <span id="tg" class="t s5">Mobile Phones </span><span id="th_4" class="t s5_4">Computers </span><span id="ti_4" class="t s6_4">Accessories </span>
+    <span id="tj" class="t s7">Sign Up </span>
+    <span id="tk" class="t s5">Tablets </span></div>    
+
+
+   <h1>category for article </h1>
     <div id="categorie" class="container-fluid">
         {% for article in categorie %}
             <a href='/categorie/{{ article.id }}'> <img src={{ article.image }} alt={{ article.name }} title={{ article.name }} style="width:400px;height:300px"/> </a>
