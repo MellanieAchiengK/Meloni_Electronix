@@ -8,6 +8,12 @@ from flask import Flask, render_template, request, redirect
 from os import getenv
 import requests
 from models import storage
+from models.country import Country
+from models.city import City
+from models.user import User
+from flask_cors import CORS
+from hashlib import md5
+#from api.v1.views.lib.hash import get_hashed_password
 
 
 BACKOFFICE_TEMPLATE = '/backoffice/templates/'
@@ -23,6 +29,7 @@ app = Flask(__name__,
             static_folder='../../web',
             template_folder='../../web')
 app.register_blueprint(app_views)
+CORS(app)
 
 
 
@@ -48,12 +55,16 @@ def page_connexion_get():
 @app.route("/login", methods=['POST'])
 def page_connexion_post():
     msg = 'erreur'
-    verite = True
-    username = request.form['username']
+    email = request.form['email']
     password = request.form['password']
-    if verite:
+    
+    r = requests.get('http://{}:{}/api/v1/user_registered/{}'.format(
+                     api_host, api_port, email))
+    user_db = r.json()
+
+    if user_db.get("rep") and user_db.get("user").get("password") == md5(password.encode()).hexdigest():
         return   redirect('/')
-    return render_template(FRONTEND_TEMPLATE+'connexion.html', msg='')
+    return redirect('/login')
 
 
 @app.route("/register", methods=['GET'])
@@ -64,9 +75,21 @@ def page_regiter_get():
                      api_host, api_port))
     if r.status_code == 200:
         pays_all = r.json()
+        first_country_id = pays_all[0].get('id')
+        r = requests.get('http://{}:{}/api/v1/country/{}/cities'.format(
+                     api_host, api_port, first_country_id))
+        if r.status_code == 200:
+            first_cities_all = r.json()
+            #print(first_cities_all)
+        else:
+            first_cities_all = ""
+    else:
+        pays_all= ""
+    
     context = {
-        "msg": "Une erruer",
-        "pays": pays_all
+        "msg": "",
+        "pays": pays_all,
+        "first_cities_all": first_cities_all
     }
     
     return render_template(FRONTEND_TEMPLATE+'register.html', msg=context)
@@ -74,27 +97,23 @@ def page_regiter_get():
 
 @app.route("/register", methods=['POST'])
 def page_regiter_post():
-    username = request.form['username']
+    first_name = request.form['first_name']
+    last_name = request.form['last_name']
     password = request.form['password']
     confirm_password = request.form['confirm_password']
-    contry =  request.form['contry']
-    citie = request.form['citie']
+    contry_id =  request.form['contry']
+    citie_id = request.form['citie']
     email = request.form['email']
-    r = requests.get('http://{}:{}/api/v1/country/{}'.format(
-                     api_host, api_port, contry))
-    id_county = r.json().get("id")
 
-    r = requests.get('http://{}:{}/api/v1/citie/{}'.format(
-                     api_host, api_port, citie))
-    id_citie = r.json().get("id")
-    """ user_all = storage.all('User').values
-    email_existe = False
-    for loop in user_all:
-        if loop.to_dict().get('email') == email:
-            email_existe = True """
-     
-    return id_citie
-
+    
+    user = User(first_name=first_name, last_name=last_name,
+                password=password, city_id=citie_id, email=email)
+    user.save()
+    return redirect('/succes')
+    
+@app.route("/succes")
+def succes_page():
+    return render_template(FRONTEND_TEMPLATE+'success-page.html')
 
 @app.route("/article/<int:pk>")
 def get_article(pk):
