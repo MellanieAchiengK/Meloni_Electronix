@@ -3,6 +3,7 @@
 Contains the class Db
 """
 
+import models
 from models.base_model import BaseModel, Base
 from models.address import Address
 from models.category import Category
@@ -102,3 +103,14 @@ class Db:
     def close(self):
         """call remove() method on the private session attribute"""
         self.__session.remove()
+
+    def count(self, cls=None):
+        """
+        count the number of objects in storage
+        """
+        if not cls:
+            count = 0
+        else:
+            count = len(models.storage.all(cls).values())
+
+        return count

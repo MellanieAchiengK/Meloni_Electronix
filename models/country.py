@@ -10,6 +10,7 @@ from sqlalchemy.orm import relationship
 class Country(BaseModel, Base):
     """Representation of Country """
     __tablename__ = 'countries'
+    id = Column(Integer, primary_key=True)
     iso2 = Column(String(2), nullable=True)
     name = Column(String(128), nullable=False)
     nicename = Column(String(128), nullable=False)
