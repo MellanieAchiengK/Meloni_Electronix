@@ -3,9 +3,9 @@
 
 {% block content %}
     <h1>Liste article of categorie </h1>
-    <div id="store" class="d-flex p-2 bd-highlight" >
+    <div id="store" >
         {% for article in listecategorie %}
-            <a href='/article/{{ article.id }}'> <img src={{ article.image }} alt={{ article.name }} title={{ article.name }} style="width:300px;height:300px;"/> </a>
+            <a href='/article/{{ article.id }}'> <img src={{ article.image }} alt={{ article.name }} title={{ article.name }}  style="width:400px;height:300px"/> </a>
             <h2> {{ article.title}} </h2>
         {% endfor %}
     </div>
