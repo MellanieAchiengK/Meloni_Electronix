@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS `countries` (
 
 --
 -- Dumping data for table `countries`
+-- tentative de correction
 --
 
 INSERT INTO `countries` (`id`, `iso2`, `name`, `nicename`, `iso3`, `numcode`, `phonecode`) VALUES

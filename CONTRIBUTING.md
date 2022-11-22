@@ -22,5 +22,5 @@ git chechout development
 git merge your_name
 git push
 ```
-
+<!-- tentative de correction -->
 **NB: do not push on the branch master**  
