@@ -1,6 +1,3 @@
--- prepares a MySQL server for the project
-
--- tentative de correction
 
 CREATE DATABASE IF NOT EXISTS ME_db;
 CREATE USER IF NOT EXISTS 'melani_dev'@'localhost' IDENTIFIED BY 'Mel0ni_dev_123';
