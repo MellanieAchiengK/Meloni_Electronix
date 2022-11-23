@@ -3,14 +3,14 @@
 <meta charset="utf-8">
 <head>
       <title>Meloni Electronix</title>
-      <link rel="stylesheet" type="text/css" href="../static/styles/home.css">
-      <link rel="stylesheet" type="text/css" href="../static/styles/nav.css">
-      <link rel="stylesheet" type="text/css" href="../static/styles/footer.css">
+      <link rel="stylesheet" href="{{url_for('static', filename='frontend/static/styles/home.css' }}">
+      <link rel="stylesheet" href="{{url_for('static', filename='frontend/static/styles/nav.css')}}">
+      <link rel="stylesheet" href="{{url_for('static', filename='frontend/static/styles/footer.css') }}">
       <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body>
 <nav class="navbar"></nav>
-      <script src="../static/scripts/nav.js"></script>
+      <script src="{{url_for('static', filename='frontend/static/scripts/nav.js) }}"></script>
     <!-- hero section -->
 <header class="hero-section">
     <div class="content">
@@ -20,24 +20,24 @@
 
 <!-- collections -->
     <a href="#" class="categories">
-        <img src="../static/images/14-series.webp" alt=""> 
+        <img src="{{url_for('static', filename='frontend/static/images/14-series.webp') }}" alt=""> 
     </a>
     <p class="category-title">Mobile <br> Phones</p>
     <a href="#" class="categories">
-        <img src="../static/images/nokia-t20-tablet.jpeg" alt="">
+        <img src="{{ url_for('static', filename='frontend/static/images/nokia-t20-tablet.jpeg') }}" alt="">
     </a>
     <p class="category-title">Tablets </p>
     <a href="#" class="categories">
-        <img src="../static/images/imacs.jpeg" alt="">
+        <img src="{{url_for('static', filename='frontend/static/images/imacs.jpeg') }}" alt="">
     </a>
     <p class="category-title">Computers</p>
     <a href="#" class="categories">
-        <img src="../static/images/xiaomi-mi-band-5-watch-strap-3-units.jpeg" alt="">
+        <img src="{{ url_for('static', filename='frontend/static/images/xiaomi-mi-band-5-watch-strap-3-units.jpeg') }}" alt="">
     </a> 
     <p class="category-title">Accessories</p>
 </section>
 <footer>
-    <script src="../static/scripts/footer.js"></script>
+    <script src="url_for('static', filename='frontend/static/scripts/footer.js') }}"></script>
 </footer>
 </body>
 </html>

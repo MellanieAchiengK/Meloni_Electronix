@@ -9,8 +9,8 @@ const createNav = () => {
                     <input type="text" class="search-box" placeholder="search">
                     <button class="search-btn">search</button>
                 </div>
-            <a href="#"><img src="../static/images/user.png" alt=""></a>
-                <a href="#"><img src="../static/images/shopping-cart.png" alt=""></a>
+            <a href="#"><img src="{{url_for('static', filename='frontend/static/images/user.png') }}" alt=""></a>
+                <a href="#"><img src="{{url_for('static', filename='frontend/static/images/shopping-cart.png') }}" alt=""></a>
             </div>
         </div>
         <ul class="links-container"> 
