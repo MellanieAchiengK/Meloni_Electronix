@@ -110,6 +110,11 @@ def page_regiter_post():
     citie_id = request.form['citie']
     email = request.form['email']
 
+    if password != confirm_password:
+        flash('No image selected for uploading')
+        return redirect(request.url)
+    
+    print("apres contrainte password")
     
     user = User(first_name=first_name, last_name=last_name,
                 password=password, city_id=citie_id, email=email)

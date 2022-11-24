@@ -1,8 +1,3 @@
-/* $.get('http://localhost:5000/api/v1/country/155/cities', function (data) {
-    data.forEach(element => {
-        console.log(element)
-    });
-}); */
 
 const localhost = "http://localhost:5000"
 let id_country = ""
@@ -23,10 +18,8 @@ $(document).ready(function(){
       })
     }); 
 
-    $('input:submit').prop('disabled', true); 
-    //$('#password').val()
-    //$('#confirm_password').val()
-    //$('input[name=username]'). val();
+   /*  $('input:submit').prop('disabled', true); 
+
     let first_name=''
     let last_name=''
     let pass1=''
@@ -81,5 +74,5 @@ $(document).ready(function(){
             $("#email").css("background-color", "red");
         }); 
       }
-    })
+    }) */
 });
