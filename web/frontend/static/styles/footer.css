@@ -6,43 +6,21 @@ footer{
     background: #773ac7;
 }
 
-.footer-contact-container{
-    margin-top: 40px;
-    display: flex;
+.footer-social-container{
+    margin-top: 0px;
     justify-content: space-between;
-
-}
-
-.contact{
-    margin-left: 20px;
-}
-
-.contact img{
-    position: relative;
-    width: fit-content;
-    height: fit-content;
-    text-align: right;
-    display: flex;
     align-items: center;
+    display: flex;
 }
 
-.p{
-    color: #fff;
-    text-align: right;
-    text-transform: lowercase;
+.fa{
+    padding: 5px;
+    font-size: 30px;
+    width: 100px;
+    margin: 10px 5px;
+    color: black;
 }
 
-.contact:nth-child(1){
-    margin-left: 0;
-}
-
-.footer-credit{
-    width: 100%;
-    padding: 10px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    text-align: center;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.2);
+.fa:hover{
+    opacity: 0.7;
 }

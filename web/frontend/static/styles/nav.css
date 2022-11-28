@@ -16,13 +16,13 @@
 .nav{
     padding: 10px 10vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo{
     height: 150px;
-    display:block;
-    margin: auto;
+    margin-right: auto;
 }
 
 .nav-items{
@@ -46,7 +46,6 @@
     background: none;
     color: #a9a9a9;
     outline: none;
-    align-self: center;
 }
 
 .search-btn{
@@ -56,7 +55,7 @@
     border: none;
     outline: none;
     cursor: pointer;
-    background: #383838;
+    background: #773ac7;
     color: #fff;
     text-transform: capitalize;
     font-size: 15px;
