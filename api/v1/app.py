@@ -40,10 +40,14 @@ CORS(app)
 
 
 @app.route("/")
+def home():
+    return render_template(FRONTEND_TEMPLATE+'home.html')
+
+@app.route("/categorie")
 def hello_world():
     r = requests.get('http://{}:{}/api/v1/categorie/'.format(
                      api_host, api_port))
-    return render_template(FRONTEND_TEMPLATE+'home.html',
+    return render_template(FRONTEND_TEMPLATE+'categorie.html',
                            categorie=r.json().get('categorie'))
 
 

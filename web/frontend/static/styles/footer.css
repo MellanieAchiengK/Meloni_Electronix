@@ -1,0 +1,26 @@
+footer{
+    position: relative;
+    width: 100%;
+    padding: 40px 10vw;
+    padding-bottom: 25px;
+    background: #773ac7;
+}
+
+.footer-social-container{
+    margin-top: 0px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.fa{
+    padding: 5px;
+    font-size: 30px;
+    width: 100px;
+    margin: 10px 5px;
+    color: black;
+}
+
+.fa:hover{
+    opacity: 0.7;
+}
