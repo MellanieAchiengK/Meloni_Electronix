@@ -40,10 +40,14 @@ CORS(app)
 
 
 @app.route("/")
+def home():
+    return render_template(FRONTEND_TEMPLATE+'home.html')
+
+@app.route("/categorie")
 def hello_world():
     r = requests.get('http://{}:{}/api/v1/categorie/'.format(
                      api_host, api_port))
-    return render_template(FRONTEND_TEMPLATE+'home.html',
+    return render_template(FRONTEND_TEMPLATE+'categorie.html',
                            categorie=r.json().get('categorie'))
 
 
@@ -110,6 +114,11 @@ def page_regiter_post():
     citie_id = request.form['citie']
     email = request.form['email']
 
+    if password != confirm_password:
+        flash('No image selected for uploading')
+        return redirect(request.url)
+    
+    print("apres contrainte password")
     
     user = User(first_name=first_name, last_name=last_name,
                 password=password, city_id=citie_id, email=email)

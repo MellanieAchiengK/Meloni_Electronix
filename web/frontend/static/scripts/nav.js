@@ -15,7 +15,7 @@ const createNav = () => {
         </div>
         <ul class="links-container"> 
         <li class="link-item"><a href="#" class="link">Home</a></li>
-        <li class="link-item"><a href="../templates/products.html" class="link">All Products</a></li>
+        <li class="link-item"><a href="categorie" class="link">All Products</a></li>
         <li class="link-item"><a href="#" class="link">Samsung</a></li>
         <li class="link-item"><a href="#" class="link">Apple</a></li>
         <li class="link-item"><a href="#" class="link">OnePlus</a></li>
