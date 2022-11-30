@@ -1,33 +1,47 @@
-{% extends "/frontend/templates/base.html" %}
-{% block title %}Welcome{% endblock %}
-
-{% block head %}
-    <link rel="stylesheet" href="{{url_for('static', filename='frontend/static/styles/landing_page.css') }}">
-{% endblock %}
-
-{% block content %} 
-    <nav id="paragraph" class="paragraph-naviagtion">
-        <a class="paragraph1" href="#"><span>Highlight</span><br/></a>
-        <a class="paragraph1" href="#"><span>Specification</span><br/></a>
-        <a class="paragraph1" href="#"><span>Compare></span><br/></a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static', filename='frontend/static/styles/landing_page.css' }}">
+  <title>Landing Page</title>
+<body>
+    <nav>
+      <div class="logo">
+       <img src="{{url_for('static', filename='frontend/static/images/logo.png' }}" alt="">
+      </div>
+      <div class="navLinks">
+        <ul>
+          <li><a href="#">Product</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <button type="button">Login</button>
+        </ul>
+      </div>
     </nav>
-
-
-    <p><span>Iphone 14 Series</span><br/></p>
-    <p id="paragraph2"><span>LATEST ARRIVALS</span><br/></p>
-    <p id="paragraph3">
-    <span>Quality and elegance are our</span>
-    <br/>
-    <span>top priorities at affordable</span>
-    <br/>
-    <span>prices.</span> <br/>
-
-    <div class="btn_buy">
-        <button type="button">BUY NOW</button>
-    </div>
-    <img id="image5" class="image5" src="{{url_for('static', filename='frontend/static/images/nav_left.png') }}">
-    <img id="image6" class="image6" src="{{ url_for('static',filename='frontend/static/images/circle.png') }}">
-    <img id="image7" class="image7" src="{{ url_for('static', filename='frontend/static/images/iphone14.png') }}">
-    <img id="image8" class="image8" src="{{url_for('static', filename='frontend/static/images/nav_right.png') }}">
-    <img id="image9" class="image9" src="{{url_for('static', filename='frontend/static/images/arrow.png') }}">
-{% endblock %}
+   
+     <nav >
+      <div class="nav2">
+       <ul>
+         <li><a href="#">Highlight</a></li>
+         <li><a href="#">Specification</a></li>
+         <li><a href="#">Compare</a></li>
+       </ul>
+      </div>
+     </nav>
+      
+      <!-- Header content with banner image -->
+      <div class="row">
+        <div class="column1">
+          <h1>Iphone 14 Series</h1>
+          <h2>Latest Arrivals</h2>
+          <p>Quality and elegance are our <br/> top priorities at affordable <br/> prices.</p>
+          <button>BUY NOW</button>
+        </div>
+        <div class="column2">
+          <img src="{{url_for('static', filename='frontend/static/images/iphone14.png' }}" alt="banner" width="500px">
+        </div>
+      </div>
+<footer></footer>
+</body>

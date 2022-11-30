@@ -1,128 +1,147 @@
-.html body {
-   font-style: normal;
-   font-size: 13pt;
-   font-family: Montserrat SemiBold;
-   color:#231f20;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
 }
-#image1 {
-   position: absolute;
-   top: 1.11in;
-   left: 5.57in;
-   width:0.14in;
-   height:0.08in
+
+.navbar{
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
 }
-#image2 {
-   position:absolute;
-   top:1.11in;
-   left:7.21in;
-   width:0.14in;
-   height:0.08in
+
+nav {
+  padding: 10px 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-#image3 {
-   position: absolute;
-   top: 1.11in;
-   left: 8.80in;
-   width: 0.14in;
-   height: 0.08in;
+
+.logo{
+  height: 200px;
+  margin-right: 100px;
 }
-button {
-    background-color: #773ac7;
-    position: absolute;
-    top: 0.92in;
-    left: 12.22in;
-    width: 1.42in;
-    height: 0.45in;
-    text-align: right; 
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12pt;
-    font-family: Montserrat SemiBold;
-    color:#ffffff;
+nav ul{
+  display: flex;
+  list-style: none;
 }
-#image4 {
-    position: absolute;
-    top: 0.96in;
-    left: 12.28in;
-    width: 0.36in;
-    height:0.36in;
+nav ul li{
+  padding: 8px 15px;
+  border-radius: 10px;
+  transition: 0.2s ease-in;
+  align-items: center;
 }
-p {
-   position: absolute;
-   top: 2.75in;
-   left: 1.80in;
-   width: 2.39in;
-   line-height:0.37in;
-   font-weight: bold;
-   font-size: 18pt;
-   color:#000000;
+nav ul li a{
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
 }
-#paragraph2 {
-   position: absolute;
-   top: 3.58in;
-   left: 1.78in;
-   width: 4.38in;
-   line-height: 0.60in;
-   font-weight: bold;
-   font-size: 29pt;
-   font-family: Montserrat ExtraBold;
-   color:#000000;
+nav .navLinks button{
+  padding: 2px 20px;
+  border-radius: 10px;
+  color: white;
+  background-color: #773ac7;
+  font-size: 16px;
+  border-style: none;
+  font-weight: 700;
+  margin-left: 500px;
+  align-items: left;
 }
-#paragraph3 {
-   font-weight: normal;
-   font-size: 21pt;
-   font-family: Montserrat;
-   color:#000000;
-   position: absolute;
-   top: 4.34in;
-   left: 1.80in;
-   width: 4.75in;
-   line-height: 0.44in;
+nav ul li:hover{
+  background-color: #773ac7;
 }
-.btn-buy {
-   background-color: #773ac7;
-   position: absolute;
-   top: 6.97in;
-   left: 2.08in;
-   width: 1.58in;
-   line-height:0.38in;
-   font-style: normal;
-   font-weight: bold;
-   font-size: 18pt;
-   font-family: Montserrat SemiBold;
-   color:#ffffff;
+nav .menubtn{
+  font-size: 30px;
+  font-weight: bolder;
+  cursor: pointer;
+  display: none;
 }
-#image5 {
-   position: absolute;
-   top: 4.11in;
-   left: 0.61in;
-   width: 0.53in;
-   height: 0.88in;
+ 
+/* responsive navbar css */
+@media screen and (max-width: 600px) {
+  nav .menubtn{
+    display: flex;
+  }
+  nav .navLinks{
+    display: none;
+  }
 }
-#image6 {
-   position: absolute;
-   top: 2.11in;
-   left: 7.29in;
-   width: 5.76in;
-   height: 5.76in;
+ 
+.nav2{
+  padding: 5px 10vw;
+  justify-content: left;
+  list-style: none;
+  margin-right: 1000px;
 }
-#image7 {
-   position: absolute;
-   top: 2.48in;
-   left: 6.40in;
-   width: 7.53in;
-   height:5.01in;
+ 
+.row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2%;
+  margin-left: 10%;
+  margin-right: 15%;
 }
-#image8 {
-   position: absolute;
-   top: 4.11in;
-   left: 13.37in;
-   width: 0.53in;
-   height:0.88in;
+.row .column1 {
+  padding-right: 20px;
 }
-#image9 {
-   position: absolute;
-   top: 7.12in;
-   left: 4.15in;
-   width: 0.71in;
-   height:0.05in;
+
+.column1 h1 {
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+.column1 h2 {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+.column1 p {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+.column1 button {
+  width: 150px;
+  padding: 12px 20px;
+  border-radius: 20px;
+  border-style: none;
+  color: white;
+  background-color: #773ac7;
+  font-size: 17px;
+  font-weight: 600;
+}
+/* Header content responsive */
+@media screen and (max-width: 980px) {
+  .column2 img {
+    /* width: 60000px;
+    height: 60000px; */
+    margin-right: 1000px;
+    object-fit: cover;
+  }
+  .column1 h1 {
+    font-size: 40px;
+  }
+  .column1 p{
+    font-size: 17px;
+  }
+  .row {
+    margin-top: 80px;
+  }
+}
+ 
+@media screen and (max-width: 600px) {
+ 
+  .column1 h1 {
+    font-size: 35px;
+  }
+  .row {
+    flex-direction: column;
+ 
+  }
+  .row .column1 {
+    padding: 30px;
+  }
 }
