@@ -10,5 +10,5 @@ ME_MYSQL_USER=melani_dev ME_MYSQL_PWD=Mel0ni_dev_123 ME_MYSQL_HOST=localhost ME_
 if [ "$1" = "console" ];then
     ME_MYSQL_USER=melani_dev ME_MYSQL_PWD=Mel0ni_dev_123 ME_MYSQL_HOST=localhost ME_MYSQL_DB=ME_db ME_MYSQL_PORT=5000 ./console.py
 else
-    ME_MYSQL_USER=melani_dev ME_MYSQL_PWD=Mel0ni_dev_123 ME_MYSQL_HOST=localhost ME_MYSQL_DB=ME_db ME_MYSQL_PORT=5000 ./api/v1/app.py
+    ME_MYSQL_USER=melani_dev ME_MYSQL_PWD=Mel0ni_dev_123 ME_MYSQL_HOST=localhost ME_MYSQL_DB=ME_db ME_MYSQL_PORT=5000 python3 api/v1/app.py
 fi

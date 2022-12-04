@@ -4,6 +4,8 @@ The objective of this project (Meloni Electronix) is to develop an e-commerce ap
 ![CONTRIBUTING.md](/CONTRIBUTING.md)
 
 
+install mysql   
+https://www.vultr.com/docs/how-to-install-mysql-5-7-on-ubuntu-20-04/    
 
 create a databases
 
