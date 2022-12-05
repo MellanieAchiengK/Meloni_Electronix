@@ -1,3 +1,4 @@
+
 CREATE TABLE IF NOT EXISTS `countries` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `iso2` char(2) NOT NULL,
@@ -7,7 +8,7 @@ CREATE TABLE IF NOT EXISTS `countries` (
   `numcode` smallint(6) DEFAULT NULL,
   `phonecode` int(5) NOT NULL,
   PRIMARY KEY (`id`)
-)  DEFAULT CHARSET=latin1;
+)  DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `countries`

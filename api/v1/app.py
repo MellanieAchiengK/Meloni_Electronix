@@ -147,15 +147,15 @@ def articebycategorie(pk):
                            listecategorie=r.json().get('listecategorie'))
 
 
-# @app.route("/me-admin")
-# @Melanie_Electronic_login_required
-# def dashboard():
-#     """Returns admin dashboard"""
-#     product_count = storage.count(Product)
-#     category_count = storage.count(Category)
-#     return render_template(BACKOFFICE_TEMPLATE+'dashboard.html',
-#                            product_count=product_count,
-#                            category_count=category_count)
+@app.route("/me-admin")
+#@Melanie_Electronic_login_required
+def dashboard():
+   """Returns admin dashboard"""
+   product_count = storage.count(Product)
+   category_count = storage.count(Category)
+   return render_template(BACKOFFICE_TEMPLATE+'dashboard.html',
+                          product_count=product_count,
+                          category_count=category_count)
 
 
 @app.route("/me-admin/products")

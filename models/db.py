@@ -46,7 +46,7 @@ class Db:
         ME_MYSQL_PWD = getenv('ME_MYSQL_PWD')
         ME_MYSQL_HOST = getenv('ME_MYSQL_HOST')
         ME_MYSQL_DB = getenv('ME_MYSQL_DB')
-        self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.
+        self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}?charset=utf8mb4'.
                                       format(ME_MYSQL_USER,
                                              ME_MYSQL_PWD,
                                              ME_MYSQL_HOST,
