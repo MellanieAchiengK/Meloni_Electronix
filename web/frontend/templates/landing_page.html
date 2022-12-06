@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "/frontend/templates/base.html" %}
+{% block title %}Landing Page{% endblock %}
+
+{% block head %}
   <link rel="stylesheet" href="{{url_for('static', filename='frontend/static/styles/landing_page.css' }}">
-  <title>Landing Page</title>
-<body>
+{% endblock %}
+
+{% block navbar %}
     <nav>
       <div class="logo">
        <img src="{{url_for('static', filename='frontend/static/images/logo.png' }}" alt="">
@@ -20,7 +20,9 @@
         </ul>
       </div>
     </nav>
-   
+{% endblock %}
+
+{% block content %}
      <nav >
       <div class="nav2">
        <ul>
@@ -43,5 +45,4 @@
           <img src="{{url_for('static', filename='frontend/static/images/iphone14.png' }}" alt="banner" width="500px">
         </div>
       </div>
-<footer></footer>
-</body>
+{% end block %}
