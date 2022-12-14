@@ -1,18 +1,59 @@
-{% extends "/frontend/templates/base.html" %}
-{% block title %}Home{% endblock %}
-{% block head %}
-    <!-- <script src="{{ url_for('static', filename='/frontend/static/scripts/home.js') }}"></script> -->
-    <link rel="stylesheet" href="{{url_for('static', filename='frontend/static/styles/styles.css') }}">
-    <link rel="stylesheet " href="{{url_for('static', filename='frontend/static/styles/home.css') }}">
     <link rel="stylesheet" href="https://cdn.mathpix.com/fonts/cmu.css"/>
-{% endblock %}
+    <link rel="stylesheet" href="{{url_for('static', filename='frontend/static/styles/product.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='frontend/static/styles/nav.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='frontend/static/styles/footer.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
 
-{% block content %}
-    <h1>category for article </h1>
-    <div id="categorie" class="container-fluid">
-        {% for article in categorie %}
-            <a href='/categorie/{{ article.id }}'> <img src={{ article.image }} alt={{ article.name }} title={{ article.name }} style="width:400px;height:300px"/> </a>
-            <h2> {{ article.title}} </h2>
-        {% endfor %}
+    <body>
     </div>
-{% endblock %}
+    <nav class="navbar"></nav>
+    
+    <button class="pre-btn"><img src="{{url_for('static', filename='fronted/static/images/nav_left.png') }}" alt=""></button>
+    <button class="nxt-btn"><img src="{{url_for('static', filename='frontend/static/images/nav_right.png') }}" alt=""></button>
+        
+    <!-- best selling products -->
+    <section class="best-selling-product-section">
+        <h1 class="section-title">best selling products</h1>
+        <div class="product-container">
+            <div class="product-card">
+                <img src="img/product-1.png" class="product-img" alt="">
+                <p class="product-name">Samsung A02s→</p>
+            </div>
+            <div class="product-card">
+                <img src="img/product-2.png" class="product-img" alt="">
+                <p class="product-name">Iphone 12 →</p>
+            </div>
+            <div class="product-card">
+                <img src="img/product-3.png" class="product-img" alt="">
+                <p class="product-name">Oppo A53 →</p>
+            </div>
+            <div class="product-card">
+                <img src="img/product-4.png" class="product-img" alt="">
+                <p class="product-name">Samsung Type C charger →</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- product cards -->
+    <div class="product-container">
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-tag">50% off</span>
+                <img src="url_for img/card1.png" class="product-thumb" alt="">
+                <button class="card-btn">add to cart</button>
+            </div>
+            <div class="product-info">
+                <h2 class="product-brand">samsung</h2>
+                <p class="product-short-des">a short line about the device..</p>
+                <span class="price">$20</span><span class="actual-price">$40</span>
+            </div>
+        </div>
+        
+            +7 more cards
+        </div>
+        <footer></footer>
+            <script src="{{url_for('static', filename='fronted/static/scripts/footer.js') }}"></script>
+            <script src="{{url_for('static', filename='frontend/static/scripts/product.js') }}"></script>
+            <script src="{{url_for('static', filename='frontend/static/scripts/products_nav.js') }}"></script>
+            <script src="{{url_for('static', filename='frontend/static/scripts/nav.js') }}"></script>
+    </body>
